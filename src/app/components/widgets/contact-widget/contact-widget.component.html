@@ -1,0 +1,101 @@
+<section id="contact-widget-section" class="contact-widget-section">
+
+<form *ngIf="!formIsComplete && !formIsProcessing" id="contact-form" class="contact-form" [formGroup]="contactForm">
+
+<table class="contact-form-table">
+  <tr>
+    <td>
+      <mat-form-field class="full-width">
+      <input
+      matInput
+      formControlName="name"
+      placeholder="Full Name"
+      type="text"
+      required
+      minlength="4"
+      maxlength="30"
+      ngClass="!isString() ? 'invalid' : ''">
+      <mat-hint *ngIf="contactForm.dirty && contactForm.controls['name'] && !isString()">4-30 characters; No numbers or special characters</mat-hint>
+      </mat-form-field>
+
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <mat-form-field class="full-width">
+      <input
+      matInput
+      formControlName="email"
+      placeholder="Email Address"
+      type="email"
+      required
+      minlength="6"
+      maxlength="30"
+      ngClass="!isEmail() ? 'invalid' : ''"
+      >
+      <mat-hint *ngIf="contactForm.dirty && contactForm.controls['email'] && !isEmail()">ex. email@email.com | max 30 characters</mat-hint>
+      </mat-form-field>
+
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <mat-form-field class="full-width">
+      <input
+      matInput
+      number
+      formControlName="number"
+      placeholder="Phone Number"
+      type="tel"
+      minlength="10"
+      maxlength="15"
+      ngClass="!isNumber() ? 'invalid' : ''"
+      >
+      <mat-hint>number only; no special characters (e.g. dash)</mat-hint>
+      </mat-form-field>
+
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+       <mat-form-field class="full-width">
+      <textarea
+      matInput
+      formControlName="message"
+      placeholder="Message/Comment"></textarea>
+      </mat-form-field>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="text-right">
+    <button
+    type="reset"
+    class="btn portfolio-reset-btn default-btn-trans"
+    style="margin-right: 12px;">Reset</button>
+    <button
+    type="submit"
+    class="btn portfolio-signup-btn default-btn-color"
+    style="margin-right: 12px;"
+    [disabled]="!contactForm.dirty || contactForm.invalid || !isValid()"
+    (click)="processContactForm()">Submit Form</button>
+
+    </td>
+  </tr>
+</table>
+</form>
+
+<article>
+<span *ngIf="formIsProcessing && !formIsComplete"><i class="fa fa-spin"></i></span>
+
+<div class="thank-you">
+  <span *ngIf="formIsComplete && !formIsProcessing">Thank You for contacting us. Your answer is only minutes away. Meanwhile, please consider scheduling a <a routerLink="/demo" class="color">30 min demo</a> to discuss your options in depth.</span>
+</div>
+<button *ngIf="formIsComplete && !formIsProcessing" class="portfolio-signup-btn default-btn-color" style="margin-right: 12px;" (click)="resetFormView()">Send another request</button>
+
+</article>
+
+</section>

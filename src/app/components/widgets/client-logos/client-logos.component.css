@@ -1,0 +1,52 @@
+.client-logos-div{ display: inline-flex; align-content: center; justify-content: center;}
+.client-logos-div picture{filter:grayscale(100%); padding:0 2%;}
+.client-logos-div picture source, .client-logos-div picture img{max-height: 80px; width:auto;}
+.client-logos-div picture:hover{filter: grayscale(0%); transition: filter 500ms;}
+
+@media screen and (min-width:1241px){
+
+}
+
+@media screen and (max-width:1240px){
+
+}
+
+
+@media screen and (max-width:1035px){
+.client-logos-div picture source, .client-logos-div picture img{max-height: 70px; width:auto;}
+
+}
+
+@media screen and (max-width:780px){
+.client-logos-div picture{padding:0 2%;}
+.client-logos-div picture source, .client-logos-div picture img{max-height: 55px; width:auto;}
+}
+
+@media screen and (max-width:750px){
+
+}
+
+@media screen and (max-width:680px){
+
+}
+
+@media screen and (max-width:650px){
+
+}
+
+@media screen and (max-width:450px){
+.client-logos-div picture{padding:0 1.5%;}
+.client-logos-div picture source, .client-logos-div picture img{max-height: 35px; width:auto;}
+}
+
+@media screen and (max-width:385px){
+.client-logos-div picture{padding:0 1.5%;}
+.client-logos-div picture source, .client-logos-div picture img{max-height: 30px; width:auto;}
+}
+
+@media screen and (max-width:330px){
+.client-logos-div picture{padding:0 1.5%;}
+.client-logos-div picture source, .client-logos-div picture img{max-height: 25px; width:auto;}
+}
+
+

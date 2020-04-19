@@ -1,0 +1,62 @@
+<section id="page-header" class="page-header container-fluid relative" *ngIf="pageContent">
+
+<!-- <picture class="page-header-img-bg">
+  <source srcset="./../../../../../assets/web-design/web-design.webp" type="image/webp" alt="">
+  <img src="./../../../../../assets/web-design/web-design.jpg" type="image/jpeg" alt="">
+</picture> -->
+
+<article id="{{pageContent.class}}" class="{{pageContent.class}} row">
+  <div class="col col-xs-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 pr-30 first-col">
+    <div class="subtitle aveNext-demi mb-20">{{pageContent.subtitle}}</div>
+    <div class="title aveNext-bold mb-20">{{pageContent.title}}</div>
+    <div class="blurb aveNext-reg mb-20">{{pageContent.blurb}}</div>
+    <div class="blurb aveNext-reg mb-30">{{pageContent.blurb2}}</div>
+    <div>
+      <button
+      id=""
+      class="page-header-btn"
+      type="button"
+      routerLink="/{{pageContent.buttonLink}}">
+        {{pageContent.buttonText}}
+      </button>
+
+      <span *ngIf="pageContent.buttonText2" class="pl-20">&nbsp;</span>
+
+      <button
+      *ngIf="!checkLoginStatus()"
+      id=""
+      class="page-header-btn"
+      type="button"
+      routerLink="/{{pageContent.buttonLink2}}">
+        {{pageContent.buttonText2}}
+      </button>
+
+      <button
+      *ngIf="checkLoginStatus()"
+      id=""
+      class="page-header-btn"
+      type="button"
+      routerLink="/clients">
+        Manage Account
+      </button>
+
+
+    </div>
+  </div>
+
+  <div class="col col-xs-12 col-sm-12 col-md-4 col-lg-6 col-xl-6 relative second-col">
+    <picture class="page-header-img">
+      <!-- <source srcset="./../../../../assets/page-header/page-header-security.webp" type="image/webp" alt="">
+      <img src="./../../../../assets/page-header/page-header-security.jpg" type="image/jpeg" alt=""> -->
+
+      <source srcset="./../../../../assets/page-header/{{pageContent.headerImgWebp}}" type="image/webp" alt="">
+      <img src="./../../../../assets/page-header/{{pageContent.headerImgJpg}}" type="image/jpeg" alt="">
+
+    </picture>
+  </div>
+
+</article>
+</section>
+
+
+<!-- src/assets/page-header/page-header-security.jpg -->

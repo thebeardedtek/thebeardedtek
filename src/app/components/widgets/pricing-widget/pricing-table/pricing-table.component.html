@@ -1,0 +1,597 @@
+<section id="pricing-section" class="pricing-section container">
+<article class="row pricing-table-row">
+  <div class="col col-sm-12 col-md-11 col-lg-11 col-xl-11">
+    <table id="pricing-table" class="table pricing-table" *ngIf="pricingPlans.core && pricingPlans.plus && pricingPlans.marketing && pricingPlans.app" >
+  <thead>
+    <th>
+
+    </th>
+
+    <th>
+      <span class="aveNext-demi">{{pricingPlans.core.package_name}}</span>
+    </th>
+
+    <th>
+      <span class="aveNext-demi">{{pricingPlans.plus.package_name}}</span>
+    </th>
+
+    <th>
+      <span class="aveNext-demi">{{pricingPlans.marketing.package_name}}</span>
+    </th>
+
+    <th>
+      <span class="aveNext-demi">{{pricingPlans.app.package_name}}</span>
+    </th>
+  </thead>
+
+  <tbody>
+
+    <tr>
+      <td class="text-left">
+        <span>Monthly Pricing (USD)</span>
+      </td>
+
+      <td>
+        <span class="pricing-number"><sup>$</sup>{{pricingPlans.core.mo_price | number}}<span class="per-mo">/mo</span></span>
+      </td>
+
+      <td>
+        <span class="pricing-number"><sup>$</sup>{{pricingPlans.plus.mo_price | number}}<span class="per-mo">/mo</span></span>
+      </td>
+
+      <td>
+        <span class="pricing-number"><sup>$</sup>{{pricingPlans.marketing.mo_price | number}}<span class="per-mo">/mo</span></span>
+      </td>
+
+      <td>
+        <span class="pricing-number"><sup>$</sup>{{pricingPlans.app.mo_price | number}}<span class="per-mo">/mo</span></span>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td class="text-left">
+        <span>Flat Fee Pricing (USD)</span>
+      </td>
+
+      <td>
+        <span class="pricing-number pricing-number-flat"><sup>$</sup>{{pricingPlans.core.yr_price | number}}<span class="per-mo">/one time</span></span>
+      </td>
+
+      <td>
+        <span class="pricing-number pricing-number-flat"><sup>$</sup>{{pricingPlans.plus.yr_price | number}}<span class="per-mo">/one time</span></span>
+      </td>
+
+      <td>
+        <span class="pricing-number pricing-number-flat"><sup>$</sup>{{pricingPlans.marketing.yr_price | number}}<span class="per-mo">/one time</span></span>
+      </td>
+
+      <td>
+        <span class="pricing-number pricing-number-flat"><sup>$</sup>{{pricingPlans.app.yr_price | number}}<span class="per-mo">/one time</span></span>
+      </td>
+    </tr>
+
+
+  <tr class="gray-row">
+      <td colspan="5" class="text-left">
+        <span class="features-title aveNext-demi">Design Features</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="text-left">
+        <span>Content Management System</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td class="text-left">
+        <span>Free Stock Photography</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+
+
+    <tr>
+      <td class="text-left">
+        <span>Unlimited Pages</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+        <div><small>(7 pages)</small></div>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="text-left">
+        <span>Unlimited Graphics</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="text-left">
+        <span>Free Hosting/w SSL</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i> <div><small>(no SSL)</small></div></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="text-left">
+        <span>Free Domain</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="text-left">
+        <span>eCommerce <small>(Optional)</small></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="text-left">
+        <span>Keywords/Meta</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+    <tr class="gray-row">
+      <td colspan="5" class="text-left">
+        <span class="features-title aveNext-demi">Marketing Features</span>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td class="text-left">
+        <span>Ad Campaigns/PPC</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="text-left">
+        <span>Organic SEO</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="text-left">
+        <span>Social Media Management</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="text-left">
+        <span>Video Production</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="text-left">
+        <span>Blogging/Posts</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="text-left">
+        <span>Professional Photography</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+
+
+    <tr class="gray-row">
+      <td colspan="5" class="text-left">
+        <span class="features-title aveNext-demi">Mobile Apps</span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="text-left">
+        <span>iOS & Android Compatible</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="text-left">
+        <span>App Store Submission</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="text-left">
+        <span>Product Testing</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="text-left">
+        <span>Support & Maintenance</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="text-left">
+        <span>Promotion/Marketing</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="text-left">
+        <span>Data Security</span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-times red"></i></span>
+      </td>
+
+      <td>
+        <span><i class="fa fa-check green"></i></span>
+      </td>
+    </tr>
+  </tbody>
+
+    <tfoot class="gray-row">
+      <td class="text-left">
+        <span class="features-title aveNext-demi">Get Started</span>
+      </td>
+
+      <td>
+        <button
+        type="button"
+        (click)="selectPlan('core')"
+        id="select-core-plan"
+        class="select-core-plan btn default-btn-color shadow"
+        >
+        <span>Select Plan</span>
+        </button>
+      </td>
+
+      <td>
+        <button
+        type="button"
+        (click)="selectPlan('plus')"
+        id="select-plus-plan"
+        class="select-plus-plan btn default-btn-color shadow"
+        >
+        <span>Select Plan</span>
+        </button>
+      </td>
+
+      <td>
+        <button
+        type="button"
+        (click)="selectPlan('marketing')"
+        id="select-marketing-plan"
+        class="select-marketing-plan btn default-btn-color shadow"
+        >
+        <span>Select Plan</span>
+        </button>
+      </td>
+
+      <td>
+        <button
+        type="button"
+        (click)="selectPlan('app')"
+        id="select-app-plan"
+        class="select-app-plan btn default-btn-color shadow"
+        >
+        <span>Select Plan</span>
+        </button>
+      </td>
+    </tfoot>
+
+
+
+</table>
+  </div>
+</article>
+
+</section>

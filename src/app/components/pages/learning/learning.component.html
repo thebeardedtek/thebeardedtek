@@ -1,0 +1,211 @@
+
+
+
+<div id="app-social" class="app-social"><app-social></app-social></div>
+
+<section id="page-template-section" class="page-template-section relative container-fluid">
+  <article id="page-template-article" class="page-template-article row">
+    <div id="page-template-col" class="page-template-col col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+      <picture class="page-template-header-img">
+        <source srcset="./../../../../assets/learn-to-code/learning.webp" type="image/webp" alt="Learn To Code">
+        <img src="./../../../../assets/learn-to-code/learning.jpg" alt="Learn To Code">
+      </picture>
+
+      <div id="page-template-page-header" class="page-template-page-header">
+
+        <div class="page-header-wrapper">
+
+          <div class="page-header-title aveNext-bold">
+          Become a <span class="color aveNext-bold">Programmer</span> <span class="hide-on-mobile aveNext-bold"> In 30 Days</span>
+          </div>
+
+          <div class="page-header-subtitle aveNext-reg">
+            Learn the basics of <span class="color aveNext-reg">HTML/CSS</span> and <span class="color aveNext-reg">JavaScript</span> For FREE!
+          </div>
+
+          <div class="page-header-cta">
+            <button class="btn default-btn" routerLink="/getting-started">
+              <span class="aveNext-reg">Start Learning</span>
+            </button>
+
+            <button class="btn default-btn-color" routerLink="/ecourses">
+              <span class="aveNext-reg">View All Courses</span>
+            </button>
+          </div>
+
+          <div class="page-header-disclosure aveNext-reg">
+            *Intermediate and Advanced courses offered at low cost
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </article>
+</section>
+<div class="section-divider"></div>
+
+
+
+<section id="page-template-content-section" class="page-template-content-section container-fluid">
+
+<article id="page-template-content-row" class="page-template-content-row row">
+
+<!-- BEGINS THE LEFT ASIDE -->
+<aside id="page-template-body-aside" class="page-template-body-aside col col-xs-3 col-sm-3 col-md-5 col-lg-3 col-xl-3">
+    <!--<app-main-sidebar class="hide-on-mobile"></app-main-sidebar>-->
+    <app-courses-sidebar class="hide-on-mobile"></app-courses-sidebar>
+</aside>
+<!-- ENDS THE LEFT ASIDE -->
+
+
+<!-- BEGINS THE RIGHT MAIN BODY -->
+<div id="page-template-body-main" class="page-template-body-main col col-xs-12 col-sm-12 col-md-7 col-lg-9 col-xl-9">
+<section id="page-template-body-header" class="page-template-body-header container-fluid">
+  <article class="row">
+  <div id="page-template-title-col" class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 page-template-title-col">
+    <span class="page-template-body-title aveNext-demi">Who Can Take <span class="color aveNext-demi">Advantage</span> Of My Courses</span>
+  </div>
+
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="header-subtitle aveNext-reg hide-on-mobile">
+    Tired of your current job and looking for a path towards a six figure income? Or a student struggling to keep up in the classroom?
+    </div>
+
+    <div class="header-subtitle aveNext-reg">
+    My program is proven to help both adults switching careers and teens preparing for college. I explain the basics of HTML/CSS and JavaScript in a practical, hands-on way that's easy to understand and apply.
+
+      <span class="aveNext-reg" *ngIf="readAdvantage">
+      You'll start coding in the very first lesson. By the end of the course, you'll know enough to ace any interview or HTML/CSS/JavaScript certification. The basic lessons are free of charge and open for anyone to learn!</span>
+
+      <span class="aveNext-reg hide-on-mobile">
+      You'll start coding in the very first lesson. By the end of the course, you'll know enough to ace any interview or HTML/CSS/JavaScript certification. The basic lessons are free of charge and open for anyone to learn!</span>
+
+    <span class="read-more aveNext-reg" (click)="toggleAdvantage()" >
+        <span *ngIf="!readAdvantage" class="aveNext-reg">[...Read More]</span>
+        <span *ngIf="readAdvantage" class="aveNext-reg">[...Read Less]</span>
+    </span>
+
+    </div>
+  </div>
+  </article>
+</section>
+
+
+<section id="page-template-body-header" class="page-template-body-header container-fluid">
+  <article class="row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <span class="page-template-body-title aveNext-demi">Which <span class="color aveNext-demi">Languages</span> Are Covered?</span>
+  </div>
+  </article>
+</section>
+
+
+<section id="page-body-section" class="page-body-section container-fluid">
+  <article id="page-body-article" class="page-body-article row">
+
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 relative">
+    <div class="page-template-number aveNext-bold color">
+      HTML
+    </div>
+
+    <div class="page-template-blurb aveNext-reg">
+      It's not pretty; it's not glamorous. It's just simple text you can literally create in any text editor. Hyper Text Markup Language (HTML) is the first step to learning how to become a web developer and, thankfully, it's very easy to understand and quickly master.
+
+
+
+      <span class="aveNext-reg" *ngIf="readHTML">
+      Think of HTML as the structure, the core; or, in relation to human beings, the body. My FREE intro courses are designed for the aspiring engineer and guarantee readiness for any web developer certification offered by Microsoft. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" class="color" target="_blank">Mozilla HTML Resource </a></span>
+
+      <span class="aveNext-reg hide-on-mobile">
+      Think of HTML as the structure, the core; or, in relation to human beings, the body. My FREE intro courses are designed for the aspiring engineer and guarantee readiness for any web developer certification offered by Microsoft. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" class="color" target="_blank">Mozilla HTML Resource </a></span>
+
+    <span class="read-more aveNext-reg" (click)="toggleHTML()" >
+        <span *ngIf="!readHTML" class="aveNext-reg">[...Read More]</span>
+        <span *ngIf="readHTML" class="aveNext-reg">[...Read Less]</span>
+    </span>
+
+
+
+    </div>
+
+
+    <div class="page-template-number aveNext-bold color">
+      CSS
+    </div>
+
+    <div class="page-template-blurb aveNext-reg">
+      This is where things start to get interesting. Cascading Style Sheets (CSS) gives us the ability to add our personal touch to any web project. We can change colors, enlarge items, hide stuff, customize our background, create fun animations, and much more.
+
+
+
+      <span class="aveNext-reg" *ngIf="readCSS">
+      The possibilities and combinations are virtually endless. Think of CSS as the fancy clothes we wear, flawless makeup, or those new pair of Jordans. CSS is all about appearance; the red carpet experience. This styling technology takes HTML structures and basically "makes them look pretty", or presentable. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" class="color" target="_blank">Mozilla CSS Resource </a>
+      </span>
+
+      <span class="aveNext-reg hide-on-mobile">
+      The possibilities and combinations are virtually endless. Think of CSS as the fancy clothes we wear, flawless makeup, or those new pair of Jordans. CSS is all about appearance; the red carpet experience. This styling technology takes HTML structures and basically "makes them look pretty", or presentable. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" class="color" target="_blank">Mozilla CSS Resource </a>
+      </span>
+
+    <span class="read-more aveNext-reg" (click)="toggleCSS()" >
+        <span *ngIf="!readCSS" class="aveNext-reg">[...Read More]</span>
+        <span *ngIf="readCSS" class="aveNext-reg">[...Read Less]</span>
+    </span>
+
+
+
+    </div>
+
+
+    <div class="page-template-number aveNext-bold color">
+      JavaScript
+    </div>
+
+    <div class="page-template-blurb aveNext-reg">
+      The final technology covered in the FREE version of the curriculum centers around the most popular scripting language on planet earth, JavaScript (JS). If HTML is the body, and CSS enhances the appearance of that body, JavaScript is the life, the breath, the soul of web development.
+
+
+      <span class="aveNext-reg" *ngIf="readJS">
+      JS comes in so many flavors that it's sometimes daunting to even consider learning. My course is tailored to teach you enough programming to pass any Microsoft certification in web development. You'll learn programming in a fun, interactive way that promotes comprehension and knowledge retention.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="color" target="_blank">Mozilla JavaScript Resource </a>
+      </span>
+
+      <span class="aveNext-reg hide-on-mobile">
+      JS comes in so many flavors that it's sometimes daunting to even consider learning. My course is tailored to teach you enough programming to pass any Microsoft certification in web development. You'll learn programming in a fun, interactive way that promotes comprehension and knowledge retention.<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="color" target="_blank">Mozilla JavaScript Resource </a>
+      </span>
+
+    <span class="read-more aveNext-reg" (click)="toggleJS()" >
+        <span *ngIf="!readJS" class="aveNext-reg">[...Read More]</span>
+        <span *ngIf="readJS" class="aveNext-reg">[...Read Less]</span>
+    </span>
+
+
+
+    </div>
+
+
+
+    <div class="page-template-number aveNext-bold color">
+      Other Technologies
+    </div>
+
+    <div class="page-template-blurb aveNext-reg">
+      The FREE course teaches the fundamentals of HTML, CSS, and JavaScript; however, the fun doesn't stop there. Sign up for a membership at low cost and recieve in depth training in NodeJs, ExpressJs, Angular, React, Vue, MongoDB, SQL, REST API, Wordpress, NativeScript, and much more!
+    </div>
+
+
+
+  </div>
+
+
+
+  </article>
+</section>
+
+
+
+</div>
+<!-- THIS ENDS THE RIGHT MAIN BODY -->
+</article>
+
+</section>

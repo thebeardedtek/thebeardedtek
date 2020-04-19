@@ -1,0 +1,45 @@
+#pricing-widget-header{margin: 2em 0;}
+.pricing-widget-header-title{font-size: 3em; font-family: aveNext-bold; color: #111; text-align: center}
+.pricing-widget-header-subtitle{font-size: 2.4em; color: rgba(51,51,51,.3); text-align: center;}
+
+.signup-form-header-row{text-align: center;}
+.signup-form-header-row span{font-size:3em; line-height: 3em; font-family: AveNext-demi, sans-serif;}
+
+
+@media screen and (min-width:1241px){
+
+}
+
+@media screen and (max-width:1240px){
+
+}
+
+@media screen and (max-width:1035px){
+
+}
+
+@media screen and (max-width:780px){
+
+}
+
+@media screen and (max-width:750px){
+
+}
+
+@media screen and (max-width:680px){
+
+}
+
+@media screen and (max-width:650px){
+
+}
+
+@media screen and (max-width:450px){
+#pricing-widget-header{margin-bottom: 0px}
+.pricing-widget-header-title{font-size: 2.5em;}
+.pricing-widget-header-subtitle{font-size: 1.3em;}
+}
+
+@media screen and (max-width:380px){
+
+}

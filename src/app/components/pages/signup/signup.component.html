@@ -1,0 +1,330 @@
+<div id="app-social" class="app-social"><app-social></app-social></div>
+
+<app-spinner *ngIf="!doneProcessingForm"></app-spinner>
+
+<section id="signup-section" class="signup-section container-fluid">
+
+  <article id="signup-article" class="signup-article">
+        <form [formGroup]="planForm" id="signup-form" class="signup-form row">
+          <div id="signup-div" class="col col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 pricing-left-column pr-40">
+            <div class="pricing-left-title"><span>Your Plan</span></div>
+            <div class="pricing-left-subtitle">
+
+            <div *ngIf="planForm.controls.plan.value && planForm.controls.plan.value === 'core' || !planForm.controls.plan.value && activePlan === 'core'" >
+              <div class="package-title">Core Package</div>
+
+              <div class="package-content mt-30">
+                <p>
+                  The Core package is more than enough to get you up and selling fast. Each package includes an optional Content Management System (Wordpress, Shopify, Squarespace), Free Stock Photography, Free Domain, and Free Hosting.
+                </p>
+
+                <p>
+                  This plan allows for up to 7 pages; perfect for startup businesses and personal websites. Are you searching for more options? Try upgrading to the Plus or Marketing Package.
+                </p>
+              </div>
+            </div>
+
+            <div *ngIf="planForm.controls.plan.value && planForm.controls.plan.value === 'plus' || !planForm.controls.plan.value && activePlan === 'plus'" >
+              <div class="package-title">Plus Package</div>
+
+              <div class="package-content mt-30">
+                <p>
+                  The Plus package gives you several key features including Unlimited Pages, FREE SSL Certificate, eCommerce, and more. Each package includes an optional Content Management System (Wordpress, Shopify, Squarespace), Free Stock Photography, Free Domain, and Free Hosting.
+                </p>
+
+                <p>
+                  This plan is perfect for both small and medium sized businesses. Are you searching for more options? Try upgrading to the Marketing Package.
+                </p>
+              </div>
+            </div>
+
+            <div *ngIf="planForm.controls.plan.value && planForm.controls.plan.value === 'marketing' || !planForm.controls.plan.value && activePlan === 'marketing'" >
+              <div class="package-title">Marketing Package</div>
+
+              <div class="package-content mt-30">
+                <p>
+                  The Marketing package pretty much gives you everything needed to rank high in search engines, such as Google, and successfully convert increased traffic to sales. Key features include: Ad Campaigns (PPC), Social Media Management, Videography, Content Writing, and Professional Photography. Each package includes an optional Content Management System (Wordpress, Shopify, Squarespace), Free Stock Photography, Free Domain, and Free Hosting.
+                </p>
+
+                <p>
+                  This plan is perfect for businesses of any size that are looking to strategically market their products and services.
+                </p>
+              </div>
+            </div>
+
+            <div *ngIf="planForm.controls.plan.value && planForm.controls.plan.value === 'app' || !planForm.controls.plan.value && activePlan === 'app'" >
+              <div class="package-title">App Package</div>
+
+              <div class="package-content mt-30">
+                <p>
+                  Apps come in several flavors including the most popular iOS and Android. You have the option of building for a specific platform or a combination of platforms. We're also forward thinking in making sure your current app will be compatible with Google's new Fuschia operating system.
+                </p>
+
+                <p>
+                  Your app is carefully crafted to look awesome on any device regardless of the brand or operating system. Stay up to date with each release of a new device with our Device Integration Guarantee.
+                </p>
+              </div>
+            </div>
+
+            <div *ngIf="planForm.controls.plan.value && planForm.controls.plan.value === 'trial' || !planForm.controls.plan.value && !activePlan || !activePlan && planForm.controls.plan.value === '' || !planForm.controls.plan.value && activePlan === 'trial'" >
+              <div class="package-title">Free Trial</div>
+
+              <div class="package-content mt-30">
+                <div class="mb-10">
+                  Not sure which plan works best with your business needs? Select a Free Trial and receive a FREE Design Session, Industry Analysis, and Mockup of your project. If you're happy with my work, you may easily upgrade to a paid plan.
+                </div>
+
+                <div>
+                  Each package includes an optional Content Management System (Wordpress, Shopify, Squarespace), Free Stock Photography, Free Domain, and Free Hosting.
+                </div>
+
+              </div>
+            </div>
+
+            <div *ngIf="!registrationSuccess" >
+              <button
+              [disabled]="!formIsValid()"
+              [ngClass]="!formIsValid() ? 'disabled-form' : ''"
+              (click)="processPlanPayment(activePlan, planForm.controls.plan.value, activePeriod)"
+              class="btn default-btn default-btn-white purchase-button">
+                {{'Click To Purchase' | uppercase}}
+                <span *ngIf="activePlan && !planForm.controls.plan.value" >{{activePlan | uppercase}}</span>
+                <span *ngIf="planForm.controls.plan.value" >{{planForm.controls.plan.value | uppercase}}</span>
+                {{'Package' | uppercase}}
+              </button>
+            </div>
+
+          </div>
+
+          <div class="validate-form" *ngIf="!registrationSuccess" >
+              <div class="mb-10">Needed to complete the form:</div>
+
+            <ul class="validate-form-list">
+              <li>
+                <span *ngIf="hasValidEmail() && !emailInUse" ><i class="fa fa-check white pr-10"></i></span>
+                <span *ngIf="!hasValidEmail() && !emailInUse" ><i class="fa fa-times red pr-10"></i></span>
+                <span *ngIf="!emailInUse" >Valid Email</span>
+
+                <span *ngIf="emailInUse" ><i class="fa fa-times red pr-10"></i></span>
+                <span *ngIf="emailInUse" >User Already Exists</span>
+              </li>
+
+              <li>
+                <span *ngIf="hasValidPassword()" ><i class="fa fa-check white pr-10"></i></span>
+                <span *ngIf="!hasValidPassword()" ><i class="fa fa-times red pr-10"></i></span>
+                <span>Valid Password</span>
+              </li>
+
+              <li>
+                <span *ngIf="hasValidName()" ><i class="fa fa-check white pr-10"></i></span>
+                <span *ngIf="!hasValidName()" ><i class="fa fa-times red pr-10"></i></span>
+                <span>Full Name</span>
+              </li>
+
+              <li>
+                <span *ngIf="hasValidPayment()" ><i class="fa fa-check white pr-10"></i></span>
+                <span *ngIf="!hasValidPayment()" ><i class="fa fa-times red pr-10"></i></span>
+                <span>Valid Payment Information</span>
+              </li>
+
+              <li>
+                <span *ngIf="hasValidURL()" ><i class="fa fa-check white pr-10"></i></span>
+                <span *ngIf="!hasValidURL()" ><i class="fa fa-times red pr-10"></i></span>
+                <span>Valid Website</span>
+              </li>
+
+            </ul>
+            </div>
+
+          </div>
+
+
+
+<div *ngIf="registrationSuccess" class="col col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 pricing-right-column pb-100">
+
+  <div class="pricing-right-title mb-10">Thank You for becoming a valued client!</div>
+
+  <div class="pricing-right-subtitle mb-20">I'm excited to get started helping you build your dream. Follow me on social media: <a href="https://www.facebook.com/thebeardedtek" target="_blank" class="color">Facebook</a>, <a href="https://twitter.com/thebeardedtek" target="_blank" class="color">Twitter</a>, <a href="https://www.instagram.com/thebeardedtek/" target="_blank" class="color">Instagram</a>, <a href="https://www.linkedin.com/company/thebeardedtek" target="_blank" class="color">LinkedIn</a>.</div>
+
+
+
+<div class="mb-10">
+  As a reminder, your payment information is never saved or stored on our servers. <a href="https://stripe.com/" class="color">Stripe.com</a> processes all payments. Your card <span class="aveNext-demi">will NOT be billed</span> today. You will receive an invoice on the last business day of the month for the proceeding month. Invoices must be paid within 7 calendar days.
+</div>
+
+<div class="mb-20 mt-20">
+  First step in your project flow is scheduling a design session to review project requirements.
+  <div class="mt-20"><a href="" class="default-btn-color" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thebeardedtek/30min'});return false;">Schedule time with me today!</a></div>
+</div>
+
+<div class="mt-50">
+  <h3 class="aveNext-demi">Login Information</h3>
+  <div>Your Email Address/Username is <span class="aveNext-demi color">{{paymentPayload.clientEmail}}</span></div>
+  <div>Your Password is <span class="aveNext-demi color">{{paymentPayload.clientPassword}}</span></div>
+  <div class="mt-20 mb-30">
+    <a routerLink="/clients" class="default-btn-color">Click Here To Login</a>
+  </div>
+</div>
+
+
+
+</div>
+
+<div *ngIf="!registrationSuccess" class="col col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 pricing-right-column">
+  <div class="pricing-right-title mb-10">Select a Plan</div>
+  <div class="pricing-right-subtitle mb-20">Your plan comes complete with a <span class="aveNext-demi color">FREE Domain</span>, <span class="aveNext-demi color">FREE Hosting</span> , and tons of other features. Select below to view package details.</div>
+
+
+
+<div class="">
+<span class="pr-10">Click to change plan </span>
+<mat-form-field>
+  <mat-label>Current Plan
+    <span *ngIf="planForm.controls.plan.value && planForm.controls.plan.value !== ''" >{{planForm.controls.plan.value}}</span>
+    <span *ngIf="!planForm.controls.plan.value || planForm.controls.plan.value === ''" >{{activePlanDisplayName}}</span>
+  </mat-label>
+
+  <select formControlName="plan" matNativeControl>
+    <option *ngIf="pricingPlans.core" value="{{pricingPlans.core.short_name}}">{{pricingPlans.core.package_name}}
+      <span *ngIf="activePeriod === 'monthly'" >({{pricingPlans.core.mo_price | currency}})</span>
+      <span *ngIf="activePeriod === 'flat'" >({{pricingPlans.core.yr_price | currency}})</span>
+    </option>
+    <option *ngIf="pricingPlans.plus" value="{{pricingPlans.plus.short_name}}">{{pricingPlans.plus.package_name}}
+      <span *ngIf="activePeriod === 'monthly'" >({{pricingPlans.plus.mo_price | currency}})</span>
+      <span *ngIf="activePeriod === 'flat'" >({{pricingPlans.plus.yr_price | currency}})</span>
+    </option>
+    <option *ngIf="pricingPlans.marketing" value="{{pricingPlans.marketing.short_name}}">{{pricingPlans.marketing.package_name}}
+      <span *ngIf="activePeriod === 'monthly'" >({{pricingPlans.marketing.mo_price | currency}})</span>
+      <span *ngIf="activePeriod === 'flat'" >({{pricingPlans.marketing.yr_price | currency}})</span>
+    </option>
+    <option *ngIf="pricingPlans.app" value="{{pricingPlans.app.short_name}}">{{pricingPlans.app.package_name}}
+      <span *ngIf="activePeriod === 'monthly'" >({{pricingPlans.app.mo_price | currency}})</span>
+      <span *ngIf="activePeriod === 'flat'" >({{pricingPlans.app.yr_price | currency}})</span>
+    </option>
+    <option *ngIf="pricingPlans.trial" value="{{pricingPlans.trial.short_name}}">{{pricingPlans.trial.package_name}}
+      <span *ngIf="activePeriod === 'monthly'" >({{pricingPlans.trial.mo_price | currency}})</span>
+      <span *ngIf="activePeriod === 'flat'" >({{pricingPlans.trial.yr_price | currency}})</span>
+    </option>
+  </select>
+</mat-form-field>
+</div>
+
+<div class="mt-20 mb-20">
+  <mat-label class="mr-20 label-mobile">Select Billing Period</mat-label>
+  <mat-radio-group aria-label="Select Billing Period">
+      <mat-radio-button class="mr-20" (click)="selectPeriod('monthly')" value="monthly" [checked]="activePeriod === 'monthly'"><span class="aveNext-demi">Monthly</span></mat-radio-button>
+
+      <mat-radio-button class="" (click)="selectPeriod('flat')" value="flat" [checked]="activePeriod === 'flat'"><span class="aveNext-demi">Flat Fee</span></mat-radio-button>
+    </mat-radio-group>
+</div>
+
+<div class="mb-20">
+  <div class="mb-10">Register Account</div>
+
+  <div class="mb-20 flex-container signup-flex">
+    <div class="register-flex-item">
+      <div><small>Email <span class="red">*</span></small></div>
+      <input type="email" class="payment-input" placeholder="ex. email@gmail.com" formControlName="email" required>
+      <small class="input-hint">ex. email@email.com max 30 characters</small>
+    </div>
+
+    <div class="register-flex-item">
+      <div><small>Password <span class="red">*</span></small></div>
+      <input type="password" class="payment-input" placeholder="Enter Password" formControlName="clientPassword" required>
+      <small class="input-hint">8-20 characters. Include number, letter, &amp; special character
+</small>
+    </div>
+
+    <div class="register-flex-item">
+      <div><small>Current Website</small></div>
+      <input type="url" class="payment-input" placeholder="yoursite.com" formControlName="currentWebsite" required>
+      <small class="input-hint">ex. thebeardedtek.com</small>
+    </div>
+  </div>
+
+
+<div class="mb-10">Payment Information</div>
+  <div class="mb-10 flex-container signup-flex">
+    <div class="signup-flex-item">
+      <div><small>Name on Card <span class="red">*</span></small></div>
+      <input class="payment-input" placeholder="Enter Full Name" formControlName="stripeFullName" required>
+      <small class="input-hint">Enter Name as it appears on the card</small>
+    </div>
+
+    <div class="signup-flex-item">
+        <div><small>Card Number <span class="red">*</span></small></div>
+      <div class="flex-container relative">
+        <input type="password" class="payment-input" placeholder="XXXX-XXXX-XXXX-XXXX" formControlName="stripeNumber" required>
+      <i class="fa fa-credit-card input-icon"></i>
+      </div>
+    </div>
+  </div>
+
+  <div id="card-info" class="flex-container mt-20 mb-10">
+      <div class="mr-10">
+      <mat-form-field class="card-field">
+        <mat-label class="mr-10">Expiration Date <span class="red">*</span></mat-label>
+        <input matInput [matDatepicker]="stripeExpDate" formControlName="stripeExpDate">
+        <mat-datepicker-toggle matSuffix [for]="stripeExpDate"></mat-datepicker-toggle>
+        <mat-datepicker #stripeExpDate></mat-datepicker>
+      </mat-form-field>
+
+
+      </div>
+
+
+      <div class="mr-10">
+        <mat-form-field class="card-field">
+          <mat-label class="mr-10">CVC</mat-label>
+        <input matInput type="text" class="" placeholder="CVC" formControlName="stripeCvc" required>
+
+        <button mat-button matSuffix mat-icon-button>
+          <mat-icon>lock</mat-icon>
+        </button>
+
+        </mat-form-field>
+      </div>
+
+      <div class="mr-10">
+        <mat-form-field class="card-field">
+          <mat-label class="mr-10">Zip Code</mat-label>
+      <input matInput type="text" class="" placeholder="Zip Code" formControlName="stripeZip" required>
+
+      <button mat-button matSuffix mat-icon-button>
+          <mat-icon>place</mat-icon>
+        </button>
+
+      </mat-form-field>
+      </div>
+  </div>
+
+  <div id="mobile-purchase-submit-button" *ngIf="!registrationSuccess">
+    <button
+    [disabled]="!formIsValid()"
+    [ngClass]="!formIsValid() ? 'disabled-form' : ''"
+    (click)="processPlanPayment(activePlan, planForm.controls.plan.value, activePeriod)"
+    class="btn default-btn default-btn-color purchase-button purchase-button-mobile">
+      {{'Click To Purchase' | uppercase}}
+      <span *ngIf="activePlan && !planForm.controls.plan.value" >{{activePlan | uppercase}}</span>
+      <span *ngIf="planForm.controls.plan.value" >{{planForm.controls.plan.value | uppercase}}</span>
+      {{'Package' | uppercase}}
+    </button>
+  </div>
+
+
+  <div class="mb-10"><small class="">Your payment information is never saved or stored on our servers. <a href="https://stripe.com/" class="color">Stripe.com</a> processes all payments. Your card <span class="aveNext-demi">will NOT be billed</span> today. You will receive an invoice on the last business day of the month for the proceeding month. Invoices must be paid within 7 calendar days.</small></div>
+  <!-- end card-info -->
+
+
+
+
+
+</div>
+
+</div>
+
+</form>
+
+
+  </article>
+</section>

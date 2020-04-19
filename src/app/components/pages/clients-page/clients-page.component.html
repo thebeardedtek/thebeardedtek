@@ -1,0 +1,643 @@
+<div *ngIf="!doneProcessingForm || !doneRefreshingUser || !doneRefreshingBilling"><app-spinner></app-spinner></div>
+
+<div id="app-social" class="app-social"><app-social></app-social></div>
+<section id="clients-section-page" class="clients-section-page container-fluid pr-100 pl-100">
+<div id="app-social" class="app-social"><app-social></app-social></div><article class="clients-section-page-row row">
+  
+
+<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 clients-column clients-left-column">
+<div class="column-wrapper column-wrapper-blue">
+<form [formGroup]="clientProfileForm" (ngSubmit)="saveClientPageForm()" enctype="multipart/form-data" *ngIf="doneProcessingForm && doneRefreshingUser">
+<section id="client-contacts-section" class="">
+  <article id="client-contacts-article" class="">
+    <div id="personal-info-div" class="">
+      <div class="client-img-container">
+        <div
+          id="client-img-div"
+          class="relative client-img-div">
+
+          
+            <picture>
+              <img
+                id="client-img"
+                class="client-img"
+                *ngIf="clientPage.clientAvatar && !tempFile"
+                [src]="'./../../../../../../assets/documents/profiles/' + clientPage.clientAvatar" 
+                alt="Client Avatar"
+                >
+
+                <img
+                *ngIf="tempFile"
+                [src]="tempFile"
+                id="client-img"
+                class="client-img" 
+                >
+            </picture>
+
+            <div id="avatar-overlay" class="avatar-overlay">
+              <div *ngIf="!hasTempProfile" class="upload-btn-wrapper">
+                <button 
+                id="upload-profile-pic" 
+                class="upload-profile-pic">
+                <i class="fa fa-pencil"></i>
+                </button>
+
+                <input 
+                type="file" 
+                name="profilepic" 
+                accept="image/*"
+                (change)="onFileSelected($event)"
+                />
+              </div>
+
+              <div *ngIf="hasTempProfile" class="text-center temp-profile pl-50 pr-50">
+                <div class="pb-20">
+                  <span class="aveNext-reg white temp-profile-header">Are you sure you want to save this new profile pic?</span>
+                </div>
+                <div class="flex-container">
+                  <button class="btn default-btn-color color confirmTemp" (click)="saveNewProfilePic()">Save New</button>
+                  <button class="btn default-btn-trans white declineTemp" (click)="resetForm()"><span class="white">Cancel</span></button>
+                </div>
+              </div>
+
+
+            
+            </div>
+
+            <picture *ngIf="!clientPage.clientAvatar" class="avatar">
+            <img
+            alt="Client Avatar"
+            class="client-img" [src]="'./../../../../../../assets/documents/profiles/default-avatar.png'">
+          </picture>
+          </div>
+
+
+          
+      </div><!-- end client-img-container -->
+
+<!-- BELOW IS NEEDED WHEN YOU ADD SAVE BUTTONS TO THE PROFILE PIC -->
+<!-- <div id="submit-div" class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="text-right">
+              <button
+                type="submit"
+                class="btn default-btn-color login-button mr-20">
+                  <span>Save Form</span>
+              </button>
+
+              <button
+              type="reset"
+              (click)="resetForm()"
+              class="btn default-btn-color login-button">
+                <span>Reset</span>
+              </button>
+
+            </div>
+    </div> -->
+<!-- ABOVE IS NEEDED WHEN YOU ADD SAVE BUTTONS TO THE PROFILE PIC -->
+
+  <section class="container-fluid mb-30">
+    <article class="row">
+      <div class="col col-md-12 col-lg-12 pt-20 text-center">
+    <!-- <span class="aveNext-demi">
+      <span class="aveNext-demi" *ngIf="!clientPage.clientFirstName" >My</span>
+      <span class="aveNext-demi" *ngIf="clientPage.clientFirstName" >{{clientPage.clientFirstName}}'s</span>
+       Profile</span> -->
+    <span class="last-sign-in"><span class="aveNext-demi">Last Sign In:</span> <span> {{clientPage.lastSignIn | date:'medium'}}</span></span>
+  </div>
+    </article>
+  </section>
+
+
+  <section class="container-fluid">
+    <article id="client-contacts-article" class="row">
+    <div id="personal-info-div" class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <div class="pb-20">
+        <span class="f16 aveNext-demi">Contact Information</span>
+      </div>
+
+      <div class="personal-info-inputs">
+        <mat-form-field class="pr-10">
+          <input
+            matInput
+            type="text"
+            formControlName="clientFirstName"
+            class="login-input"
+            required
+            placeholder="First Name"
+            minlength="4"
+            ngClass="!isValidString() ? 'invalid' : ''"
+            [(ngModel)]="clientPage.clientFirstName">
+        </mat-form-field>
+
+        <mat-form-field class="pr-10">
+          <input
+            matInput
+            type="text"
+            formControlName="clientMiddleName"
+            class="login-input"
+            placeholder="Middle Name"
+            minlength="4"
+            [(ngModel)]="clientPage.clientMiddleName">
+        </mat-form-field>
+
+        <mat-form-field class="">
+          <input
+            matInput
+            type="text"
+            formControlName="clientLastName"
+            class="login-input"
+            placeholder="Last Name"
+            minlength="4"
+            [(ngModel)]="clientPage.clientLastName">
+        </mat-form-field>
+
+
+      </div>
+
+
+
+      <!-- <div class="pb-20 mt-20">
+        <span class="f16 aveNext-demi">Contact Information</span>
+      </div> -->
+
+      <div class="">
+        <mat-form-field class="form-email">
+          <span matPrefix><i class="fa fa-envelope pr-10"></i></span>
+          <input
+            matInput
+            type="email"
+            formControlName="clientEmail"
+            class="form-email-input"
+            required
+            placeholder="Email Address"
+            minlength="4"
+            [(ngModel)]="clientPage.clientEmail">
+            <small *ngIf="emailError"  class="red">Email Address Not Available</small>
+
+        </mat-form-field>
+      </div>
+      <div class="tel-inputs">
+        <mat-form-field class="pr-10">
+          <span matPrefix><i class="fa fa-phone pr-10"></i></span>
+          <input
+            matInput
+            type="tel"
+            formControlName="clientPhone1"
+            class="login-input"
+            placeholder="Primary Phone"
+            minlength="4"
+            [(ngModel)]="clientPage.clientPhone1">
+        </mat-form-field>
+
+        <mat-form-field class="pl-10">
+          <span matPrefix><i class="fa fa-phone pr-10"></i></span>
+          <input
+            matInput
+            type="tel"
+            formControlName="clientPhone2"
+            class="login-input"
+            placeholder="Alternate Phone"
+            minlength="4"
+            [(ngModel)]="clientPage.clientPhone2">
+
+        </mat-form-field>
+      </div>
+
+      <div class="pb-20 mt-30">
+        <span class="f16 aveNext-demi">Social Media</span>
+      </div>
+
+      <section>
+          <article>
+            <mat-form-field class="pr-20">
+              <span matPrefix><i class="fa fa-facebook pr-10"></i></span>
+            <input
+              matInput
+              type="text"
+              formControlName="facebookHandle"
+              class="login-input"
+              placeholder="Facebook Handle"
+              minlength="4"
+              [(ngModel)]="clientPage.facebookHandle">
+
+          </mat-form-field>
+
+          <mat-slide-toggle
+            class="mr-50"
+            formControlName="enableFacebook"
+            [(ngModel)]="clientPage.enableFacebook">
+            <span *ngIf="!clientPage.enableFacebook">Disabled</span>
+            <span *ngIf="clientPage.enableFacebook">Enabled</span>
+          </mat-slide-toggle>
+
+
+
+          <mat-form-field class="pr-20">
+            <span matPrefix><i class="fa fa-twitter pr-10"></i></span>
+            <input
+              matInput
+              type="text"
+              formControlName="twitterHandle"
+              class="login-input"
+              placeholder="Twitter Handle"
+              minlength="4"
+              [(ngModel)]="clientPage.twitterHandle">
+
+          </mat-form-field>
+
+          <mat-slide-toggle
+            formControlName="enableTwitter"
+            [(ngModel)]="clientPage.enableTwitter">
+            <span *ngIf="!clientPage.enableTwitter">Disabled</span>
+            <span *ngIf="clientPage.enableTwitter">Enabled</span>
+          </mat-slide-toggle>
+        </article>
+
+          <article>
+            <mat-form-field class="pr-20">
+              <span matPrefix><i class="fa fa-instagram pr-10"></i></span>
+            <input
+              matInput
+              type="text"
+              formControlName="instagramHandle"
+              class="login-input"
+              placeholder="Instagram Handle"
+              minlength="4"
+              [(ngModel)]="clientPage.instagramHandle">
+
+          </mat-form-field>
+
+          <mat-slide-toggle
+            class="mr-50"
+            formControlName="enableInstagram"
+            [(ngModel)]="clientPage.enableInstagram">
+            <span *ngIf="!clientPage.enableInstagram">Disabled</span>
+            <span *ngIf="clientPage.enableInstagram">Enabled</span>
+          </mat-slide-toggle>
+
+
+          <mat-form-field class="pr-20">
+            <span matPrefix><i class="fa fa-linkedin pr-10"></i></span>
+            <input
+              matInput
+              type="text"
+              formControlName="linkedinHandle"
+              class="login-input"
+              placeholder="LinkedIn Handle"
+              minlength="4"
+              [(ngModel)]="clientPage.linkedinHandle">
+
+          </mat-form-field>
+
+          <mat-slide-toggle
+            formControlName="enableLinkedin"
+            [(ngModel)]="clientPage.enableLinkedin">
+            <span *ngIf="!clientPage.enableLinkedin">Disabled</span>
+            <span *ngIf="clientPage.enableLinkedin">Enabled</span>
+          </mat-slide-toggle>
+          </article>
+      </section>
+    </div>
+  </article>
+  </section>
+
+  <div id="submit-div" class="mt-40">
+    <div class="text-right client-details-save">
+
+      <button
+        type="submit"
+        [disabled]="!clientProfileForm.dirty || clientProfileForm.invalid"
+        [ngClass]="!clientProfileForm.dirty ? 'disabled' : ''"
+        class="login-button">
+          <span>Save Profile</span>
+      </button>
+
+      <button
+        type="reset"
+        [disabled]="!clientProfileForm.dirty"
+        [ngClass]="!clientProfileForm.dirty ? 'disabled' : ''"
+        (click)="resetForm()"
+        class="reset-button">
+          <span>Reset Form</span>
+        </button>
+    </div>
+  </div>
+</div>
+
+  </article>
+</section>
+</form>
+  </div>
+</div>
+
+<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 clients-column clients-middle-column">
+  <div class="column-wrapper column-wrapper-blue">
+
+<form [formGroup]="clientProjectsForm" (ngSubmit)="updateClientProject()" >
+<section id="client-contacts-section" class="client-projects-section">
+  <article id="client-contacts-article" class="">
+    <div id="personal-info-div" class="">
+      <div class="mb-20 projects-title">
+        <span class="aveNext-reg">Current Project</span>
+        <span class="white float-right" title="Contact Us"><a routerLink="/contact" class="contact-icon"><i class="fa fa-envelope"></i></a></span>
+      </div>
+    </div>
+
+    <div class="pt-20 pb-20 text-center" *ngIf="!clientProjects.projectName && doneRefreshingUser" >
+        You Do Not Have Any Projects.
+        <div class="text-center">
+          <a routerLink="/ecourses" class="color">Signup For a Course</a>
+        </div>
+      </div>
+
+
+    <div id="client-project-details" class="client-project-details">
+      <div *ngIf="clientProjects"  class="detail-item">
+        <span class="f16 aveNext-demi">Name: </span> {{clientProjects.projectName}}
+      </div>
+
+      <div *ngIf="clientProjects"  class="detail-item">
+        <span class="f16 aveNext-demi">Desc: </span> {{clientProjects.projectDesc}}
+      </div>
+
+      <div *ngIf="clientProjects"  class="detail-item">
+        <span class="f16 aveNext-demi">Start: </span> {{clientProjects.startDate | date}}
+      </div>
+
+      <div *ngIf="clientProjects"  class="detail-item">
+        <span class="f16 aveNext-demi">Est. Completion: </span> {{clientProjects.endDate | date}}
+      </div>
+
+      <div *ngIf="clientProjects"  class="detail-item">
+        <span class="f16 aveNext-demi">Status: </span>: {{clientProjects.statusDesc}}
+      </div>
+
+    </div>
+
+    <div id="status-container" class="status-container relative">
+
+      <span *ngFor="let status of this.projectStatus" title="{{status.statusDesc}}" [ngStyle]="{'backgroundColor': getBackgroundColor(status, clientProjects)}"><i class="{{status.icon}}"></i></span>
+      </div>
+
+</article>
+</section>
+</form>
+</div>
+
+<div class="column-wrapper column-wrapper-blue mt-30">
+<section id="client-contacts-section" class="client-projects-section">
+  <article id="client-contacts-article" class="">
+    <div id="personal-info-div" class="">
+      <div class="mb-20 projects-title">
+        <span class="aveNext-reg">Courses In Progress</span>
+        <span class="white float-right" title="Contact Us"><a routerLink="/contact" class="contact-icon"><i class="fa fa-envelope"></i></a></span>
+      </div>
+    </div>
+
+    <div id="client-project-details" class="client-project-details">
+
+      <div class="pt-20 pb-20 text-center" *ngIf="doneRefreshingUser && !currentUser.clientCourses || currentUser.clientCourses !== undefined && doneRefreshingUser && currentUser.clientCourses.length === 0" >
+        You Are Not Currently Enrolled In A Course.
+      </div>
+      
+
+<span *ngIf="currentUser.clientCourses">
+  <ng-container *ngFor="let course of currentUser.clientCourses">
+    <div *ngIf="course.isActive" class="mb-30">
+      <div class="detail-item">
+      <span class="f16 aveNext-demi">Course:</span> {{course.courseName}}
+    </div>
+    
+    <div class="detail-item">
+      <span class="f16 aveNext-demi">Desc:</span> {{course.description}}
+    </div>
+    
+    <div class="detail-item">
+      <span class="f16 aveNext-demi">Start:</span> {{course.startDate | date}}
+    </div>
+    
+    <div class="detail-item">
+      <span class="f16 aveNext-demi pr-15"><a href="{{course.courseLink}}" class="aveNext-demi color">Launch Course</a></span>
+      <span class="f16 aveNext-demi pr-15 cursor"><a (click)="removeCourse(course)"  class="color">Withdraw Course</a></span>
+      <span class="f16 aveNext-demi"><a href="{{course.examLink}}" class="color">Take Exam</a></span>
+    </div>
+    
+    <div *ngIf=""  id="submit-div" class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <mat-divider class="mt-10 mb-10"></mat-divider>
+    </div>
+    </div>
+    </ng-container>
+  </span>
+    </div>
+
+    <div id="submit-div" class="mt-30" *ngIf="doneRefreshingUser" >
+    <div class="text-right client-details-save">
+
+      <button
+        routerLink="/ecourses"
+        class="courses-button">
+          <span *ngIf="doneRefreshingUser && currentUser.clientCourses && currentUser.clientCourses.length > 0" >View All Courses</span>
+          <span *ngIf="doneRefreshingUser && currentUser.clientCourses && currentUser.clientCourses.length === 0" >Click To Browse All Courses</span>
+      </button>
+
+    </div>
+  </div>
+
+</article>
+</section> 
+
+
+  </div>
+</div>
+
+<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 clients-column clients-right-column">
+    <div class="column-wrapper column-wrapper-blue">
+
+      <div id="personal-info-div" class="">
+        <div class="mb-20 projects-title">
+          <span class="aveNext-reg">Billing</span>
+          <span class="white float-right" title="Contact Us"><a routerLink="/contact" class="contact-icon"><i class="fa fa-envelope"></i></a></span>
+        </div>
+      </div>
+
+  <form [formGroup]="clientAddressForm">
+      <div id="client-project-details" class="client-project-details mb-30">
+
+        <div class="aveNext-bold mb-15">
+          Current Plan
+        </div>
+        <div *ngIf="clientBilling.customer"  class="detail-item">
+          <span class="f16 aveNext-demi">Plan: </span> {{clientBilling.customer.subscriptions.data[0].plan.name}}
+          <span *ngIf="!currentUser.active" class="pl-10 red">*inactive</span>
+        </div>
+
+        <div *ngIf="currentUser.active" class="detail-item">
+          <span *ngIf="!cancelAccount" (click)="cancelUserAccount()" class="f16 aveNext-reg color hover cancel-acct">Cancel Account</span>
+          <span *ngIf="cancelAccount" (click)="cancelUserAccount()" class="f16 aveNext-demi hover keep-acct mr-15">Keep Account Active</span>
+          <span *ngIf="cancelAccount" (click)="confirmCancelAcct()" class="f16 aveNext-reg hover color">Continue Cancel</span>
+        </div>
+
+        <div *ngIf="!currentUser.active" class="detail-item MB-20">
+          <span (click)="reactivateAccount()" class="f16 aveNext-demi hover keep-acct">Reactivate Account</span>
+        </div>
+
+        </div>
+
+        
+
+      <div id="client-project-details" class="client-project-details mb-30">
+        <div class="aveNext-bold mb-15">
+          Payment Information
+        </div>
+        <div *ngIf="clientBilling.customer && !editPayment"  class="detail-item">
+          <div class="pb-10"><span class="f16 aveNext-demi">Name on Card: </span> <span class="bg-lightgray">{{clientBilling.paymentMethods.billing_details.name}}</span></div>
+          <div class="pb-10"><span class="f16 aveNext-demi">Card Last 4: </span> <span class="bg-lightgray">xxxx-{{clientBilling.paymentMethods.card.last4}}</span></div>
+          <div class="pb-10"><span class="f16 aveNext-demi">Expires: </span> <span class="bg-lightgray">{{clientBilling.paymentMethods.card.exp_month}}/{{clientBilling.paymentMethods.card.exp_year}}</span></div>          
+        </div>
+
+      <div *ngIf="editPayment">
+
+  <div class="mb-10 flex-container signup-flex">
+    <div class="signup-flex-item">
+      <div><small>Name on Card <span class="red">*</span></small></div>
+      <input class="payment-input" formControlName="stripeFullName" required>
+      <small class="input-hint">Enter Name as it appears on the card</small>
+    </div>
+
+    <div class="signup-flex-item">
+        <div><small>Card Number <span class="red">*</span></small></div>
+      <div class="flex-container relative">
+        <input type="password" class="payment-input" formControlName="stripeNumber" required>
+      <i class="fa fa-credit-card input-icon"></i>
+      </div>
+    </div>
+  </div>
+
+  <div id="card-info" class="flex-container mt-20 mb-10">
+      <div class="mr-10">
+      <mat-form-field class="mr-10">
+        <mat-label class="mr-10">Expiration Date <span class="red">*</span></mat-label>
+        <input matInput [matDatepicker]="stripeExpDate" formControlName="stripeExpDate">
+
+        <mat-datepicker-toggle matSuffix [for]="stripeExpDate"></mat-datepicker-toggle>
+        <mat-datepicker #stripeExpDate></mat-datepicker>
+      </mat-form-field>
+
+        <mat-form-field class="">
+          <mat-label class="mr-10">CVC</mat-label>
+        <input matInput type="text" class="" placeholder="CVC" formControlName="stripeCvc" required>
+        </mat-form-field>
+      </div>
+
+      <div class="mr-10">
+        <mat-form-field class="">
+          <mat-label class="mr-10">Zip Code</mat-label>
+      <input matInput type="text" class="" placeholder="Zip Code" formControlName="stripeZip">
+      </mat-form-field>
+      </div>
+  </div>
+
+  <div class="mb-10"><small class="">Your payment information is never saved or stored on our servers. <a href="https://stripe.com/" class="color">Stripe.com</a> processes all payments. Your card <span class="aveNext-demi">will NOT be billed</span> today. You will receive an invoice on the last business day of the month for the proceeding month. Invoices must be paid within 7 calendar days.</small></div>
+  </div>
+
+    <div><span (click)="replaceCard()" class="color hover">
+      <span *ngIf="!editPayment">Replace Card</span>
+      <span *ngIf="editPayment">Cancel Replace Card</span>
+    </span>
+    </div>
+
+  </div> 
+
+  <div id="client-project-details" class="client-project-details">
+
+    <div class="aveNext-bold mb-15">
+      Billing Address
+    </div>
+    <div *ngIf="clientBilling.customer && !editAddress"  class="detail-item">
+      <span class="f16 aveNext-demi">Address: </span> {{clientBilling.customer.address.line1}}
+    </div>
+
+    <div *ngIf="clientBilling.customer && !editAddress"  class="detail-item">
+      <span class="f16 aveNext-demi">Address Cont: </span> {{clientBilling.customer.address.line2}}
+    </div>
+
+    <div *ngIf="clientBilling.customer && !editAddress"  class="detail-item">
+      <span class="f16 aveNext-demi">City/State/Zip: </span> {{clientBilling.customer.address.city}}, {{clientBilling.customer.address.state}} <span class="pl-10">{{clientBilling.customer.address.postal_code}}</span>
+    </div>
+
+
+    <div *ngIf="editAddress" class="mr-10">
+      <mat-form-field class="pr-20 line1">
+        <mat-label class="mr-10">
+          <span>Address</span> 
+        </mat-label>
+      <input matInput type="text" class="" value="{{line1}}" formControlName="line1">
+      </mat-form-field>
+
+
+      <mat-form-field class="line2">
+        <mat-label class="mr-10">
+          <span>Unit/Apt.</span> 
+        </mat-label>
+
+      <input matInput type="text" class="" value="{{line2}}" formControlName="line2">
+      </mat-form-field>
+
+    </div>
+
+    <div *ngIf="editAddress" class="mr-10">
+      <mat-form-field class="">
+        <mat-label class="mr-10">City</mat-label>
+      <input matInput type="text" class="" value="{{city}}" formControlName="city">
+      </mat-form-field>
+      </div>
+
+    <div *ngIf="editAddress" class="mr-10">
+      <mat-form-field class="pr-20">
+        <mat-label class="mr-10">State</mat-label>
+      <input matInput type="text" class="" value="{{state}}" formControlName="state">
+      </mat-form-field>
+
+      <mat-form-field class="">
+        <mat-label class="mr-10">Postal Code</mat-label>
+      <input matInput type="text" class="" value="{{postalCode}}" formControlName="postalCode">
+      </mat-form-field>
+      </div>
+
+      <div><span (click)="replaceAddress()" class="color hover">
+        <span *ngIf="!editAddress">Edit Address</span>
+        <span *ngIf="editAddress">Cancel Edit Address</span>
+      </span>
+      </div>
+
+  </div>
+
+  <div id="submit-div" class="mt-30" *ngIf="doneRefreshingUser" >
+    <div class="text-right client-details-save">
+
+      <button
+        *ngIf="editPayment || editAddress"
+        (click)="updateClientAddress()"
+        [disabled]="!clientAddressForm.dirty || clientAddressForm.invalid || editAddress && !hasValidAddress() || editPayment && !hasValidPayment"
+        [ngClass]="!clientAddressForm.dirty || clientAddressForm.invalid || editAddress && !hasValidAddress() || editPayment && !hasValidPayment ? 'disabled' : ''"
+        class="courses-button">
+          <span>Save Billing Info</span>
+      </button>
+
+      <button
+        *ngIf="editPayment || editAddress"
+        (click)="resetAddressForm()"
+        class="reset-button">
+          <span>Reset Form</span>
+      </button>
+
+    </div>
+  </div>
+    </form>
+    </div>
+</div>
+
+</article>
+</section>
+
+<div class="pb-30">&nbsp;</div>

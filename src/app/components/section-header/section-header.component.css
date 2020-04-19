@@ -1,0 +1,33 @@
+#section-header{position: relative;}
+#section-header-title-container{position: relative;}
+.section-header-bg{position: absolute; top: -70px; right:0; color:#d5cece; font-size: 14em; opacity: .15;}
+.section-header-title{position: relative; text-align: center; font-size: 5em; line-height: 1.3em; padding-top: 100px; padding-bottom: 20px; margin: 0px 6%;}
+.section-header-subtext{padding-bottom:15px; margin: 0 20%;}
+.section-header-contact-link{text-align: center;}
+
+.social-flex{display: flex; align-content: center; justify-content: center; align-items: center;}
+.social-flex span{padding: 0 10px;}
+.social-flex i{font-size: 1.5em;}
+.social-flex i:hover{color:#1c8de0;}
+
+
+@media screen and (max-width:1025px){
+    .section-header-bg{font-size: 8em; top: 0px; }
+    .section-header-title{font-size: 4em;}
+}
+
+@media screen and (max-width:769px){
+    .section-header-bg{font-size: 6em; top: 0px;}
+    .section-header-title{font-size: 2.5em; padding-top:70px;}
+    .section-header-subtext{padding:0 10%; margin: 0px;}
+    .social-flex{margin-top:12px;}
+}
+
+@media screen and (max-width:450px){
+    .section-header-bg{font-size: 4em; top: 0px;}
+    .section-header-title{font-size: 2em; padding-top:40px;}
+    .section-header-subtext{padding:0 7%;  margin: 0px;}
+    .social-flex{margin-top:12px;}
+    .sol-block-title-row{display: none;}
+
+}

@@ -1,0 +1,45 @@
+.client-img{width:100%; height: auto;}
+
+#client-contacts-section{display: flex; justify-content: center;}
+.avatar-overlay{position: absolute; width:100%; height:100%; display:flex; justify-content: center; align-items: center; align-content: center; background-color: rgba(0,0,0,.6); z-index:9; top: 0; left: 0;}
+.avatar-overlay i{border: 1px solid white; border-radius: 30px; padding:12px}
+.avatar-overlay{display: none;}
+.client-img-container:hover .avatar-overlay{display: flex;}
+.client-img-container:hover .avatar-overlay i{cursor: pointer;}
+
+/* .last-sign-in{float: right;} */
+@media screen and (min-width:1241px){
+
+}
+
+@media screen and (max-width:1240px){
+
+}
+
+@media screen and (max-width:1035px){
+
+}
+
+@media screen and (max-width:780px){
+
+}
+
+@media screen and (max-width:750px){
+
+}
+
+@media screen and (max-width:680px){
+
+}
+
+@media screen and (max-width:650px){
+
+}
+
+@media screen and (max-width:450px){
+
+}
+
+@media screen and (max-width:380px){
+
+}

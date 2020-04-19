@@ -1,0 +1,69 @@
+#app-pricing-widget{padding: 3% 9%;}
+.cycle-flex-container{display: flex; align-content: center; align-content: center; padding-top: 20px;}
+.cycle-flex-container span{padding-right: 10px;}
+.life-cycle-btn, .life-cycle-btn.inactive{border:none; background-color:#1c8de0; color:#fff; padding: 7px 15px; border-radius: 3px;}
+.life-cycle-btn:hover{background-color: #a00909; transition: background-color .3s; cursor: pointer;}
+.life-cycle-btn.active{background-color: #a00909;}
+.schedule-consultation:hover{cursor: pointer;}
+.view-all-security{text-align: left; padding-top: 1%;}
+.view-all-security a{color: #1c8de0;}
+.social-flex{display: flex; align-content: center; justify-content: center; align-items: center;}
+.social-flex span{padding: 0 10px;}
+.social-flex i{font-size: 1.5em;}
+.social-flex a{color:#1c8de0; opacity: .8;}
+.social-flex a:hover{color:#1c8de0; opacity: 1;;}
+/* .social-flex i:hover{color:#1c8de0;} */
+.responsive-design-img2{height:auto; width: 100%;}
+.responsive-design-img{width: 100%;}
+.responsive-design1{margin-top: 75px; margin-bottom: 100px; padding-left: 12%; padding-right: 12%;}
+.responsive-design2{padding-left: 12%; padding-right: 12%; margin-bottom: 100px;}
+.responsive-design3{padding-left: 12%; padding-right: 12%; margin-bottom: 100px;}
+#responsive-design-col-mobile{display: none;}
+.mobile-cycle-flex-container{margin-top: 15px; display: none;}
+
+ @media screen and (max-width:1150px){
+ }
+
+@media screen and (max-width:1035px){
+    .responsive-design-img2{width:100%; height: auto;}
+    #app-pricing-widget{padding:3% 0;}
+    .pricing-term{font-size: 1.5em;}
+    .responsive-design3{margin-bottom: 0px;}
+}
+
+@media screen and (max-width:850px){
+#responsive-design-col-desktop{display: none;}
+#responsive-design-col-mobile{display: block;}
+}
+
+@media screen and (max-width:780px){
+    #solutions-panel-desktop{display: none;}
+    .responsive-design-col{margin-top: 25px;}
+    .social-flex{margin-top:12px;}
+    .cycle-flex-container{justify-content: center;}
+
+}
+
+@media screen and (max-width:750px){
+
+
+}
+
+@media screen and (max-width:450px){
+
+    #how-to-video{width: 380px; height:225px; margin: auto;}
+    .cycle-flex-container{display: block;}
+    .cycle-flex-container button{margin-top: 15px;}
+    .social-flex{margin-top:12px;}
+    .how-it-works-title{font-size: 3em;}
+    .responsive-design-row{display: block;}
+}
+
+@media screen and (max-width:440px){
+.responsive-design3{margin-bottom: 20px;}
+
+}
+
+@media screen and (max-width:370px){
+
+}

@@ -1,0 +1,62 @@
+.promo-section{color:#FFF;}
+.promo-header-img{width:100%; height: auto;}
+.promo-section, .promo-section .promo-row{background-color:#f3c50f;}
+.promo-section.container-fluid{padding-left: 0px; padding-right: 0px;}
+/* .promo-row{padding:0px 35px;} */
+.promo-row .col{padding-left: 0px; padding-right: 0px;}
+.pricing-col{display: flex; flex-direction: column; align-self:center }
+.discount-rate{font-size: 10em; line-height: 1em;}
+.discount-tagline{font-size: 2em;}
+.branding-message span{display: block; font-family: aveNext-bold, sans-serif !important; font-size: 3.2em; line-height: 1em;}
+.brand, .branding-link{text-transform: uppercase;}
+.brand{font-size: 3.5em; line-height: 1em; font-family: aveNext-bold, sans-serif !important;}
+.branding-link{font-size: 1.3em; line-height: 1em; font-family: aveNext-ul, sans-serif !important; letter-spacing: .7em; padding-left: 7px;}
+.pricing-container{padding-bottom: 70px;}
+.branding-message{padding-bottom: 35px;}
+.promo-how-to{background: #111; color: #FFF; padding: 30px 10%;}
+.promo-how-to .row{align-items: center}
+.how-to-title{font-size: 30px;}
+.mobile-format{display: none;}
+.promo-row-mobile{align-items: center; padding: 15px 25px; text-align: center;}
+.promo-section-mobile .discount-rate{font-size: 3em;}
+.promo-section-mobile .pricing-container{padding-bottom: 0px;}
+/* .promo-how-to button a{color:#1c8de0 !important;}  */
+
+@media screen and (max-width:1035px){
+.discount-rate{font-size: 6em;}
+.discount-tagline{font-size: 1.4em;}
+.branding-message span{font-size: 2em; line-height: 1.2em;}
+.pricing-container{padding-bottom:20px;}
+.brand{font-size: 2.3em;}
+.branding-link{font-size: .85em;}
+.promo-header-img{height: 100%;}
+.branding-message{padding-bottom: 25px;}
+}
+
+@media screen and (max-width:900px){
+.discount-rate{font-size: 5em;}
+.discount-tagline{font-size: 1.2em;}
+.branding-message span{font-size: 1.5em; line-height: 1.2em;}
+.pricing-container{padding-bottom:20px;}
+.brand{font-size: 2em;}
+.branding-link{font-size: .8em;}
+.branding-message{padding-bottom: 15px;}
+
+}
+
+@media screen and (max-width:780px){
+.desktop-format{display: none;}
+.mobile-format{display:flex;}
+}
+
+@media screen and (max-width:520px){
+.promo-section-mobile .discount-rate{font-size: 2.5em;}
+.promo-section-mobile .discount-tagline{font-size: 1em;}
+.promo-section-mobile, .promo-row-mobile{display: block;}
+.promo-section-mobile .pricing-container{padding-bottom: 15px;}
+}
+
+@media screen and (max-width:370px){
+
+}
+

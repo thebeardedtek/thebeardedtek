@@ -1,0 +1,82 @@
+#portfolio-header{position: relative; margin-bottom: 50px; background-color: #111;}
+#portfolio-section{background-color:#111; padding-bottom: 85px;}
+.portfolio-row{padding:0 5%;}
+#portfolio-header-title-container{position: relative;}
+.portfolio-header-bg{position: absolute; top: -30px; right:0; color:#666;}
+.portfolio-header-title{position: relative; text-align: center; font-size: 3em; line-height: 1.3em; padding-top: 60px; padding-bottom: 20px; margin: 0px 6%; color: #f4f4f4;}
+.portfolio-header-subtext{padding-bottom:15px; margin: 0 20%; color: #f4f4f4;}
+.portfolio-header-contact-link{text-align: center;}
+#ngx-gallery-id{margin: auto;}
+.social-flex{display: flex; align-content: center; justify-content: center; align-items: center;}
+.social-flex span{padding: 0 10px;}
+.social-flex i{font-size: 1.5em; color: #f4f4f4;}
+.social-flex i:hover{color:#1c8de0;}
+
+.portfolio-flex{display: flex; align-content: center; justify-content: center;}
+.portfolio-flex div.portfolio-col{width:20%; overflow: hidden;}
+.portfolio-img{object-fit: cover; width: 80%; height: auto;}
+.portfolio-svg{z-index: 99;}
+.portfolio-text{line-height:1.3em; width:100%; font-size:4em; color:#fff; display: flex; align-content: center; align-items: center; justify-content: center; position: absolute; z-index: 999;}
+.portfolio-subtext{font-size: .5em;}
+.portfolio-signup-span{display: block;}
+/* .portfolio-signup-btn{font-size: 1em; padding:10px 30px;} */
+.portfolio-cta-btns{margin-top:30px;}
+#portfolio-galleryOptions, #portfolio-brandingOptions, #portfolio-graphicOptions{z-index: 999;}
+#view-full-portfolio{text-align: center; margin-top: 40px;}
+.view-full-portfolio{color: #FFF; border:1px solid #FFF; padding: 10px 25px;}
+.view-full-portfolio:hover{color:#FFF; background-color:#1c8de0; border-color:#1c8de0;}
+
+
+.portfolio-grid{position: relative;}
+.portfolio-grid.col{padding-left: 0px; padding-right: 0px;}
+.portfolio-grid img{width: 100%; height: auto; -ms-transform: scale(.9); -webkit-transform: scale(.9); transform: scale(.9);}
+.portfolio-grid img:hover{-ms-transform: scale(1); -webkit-transform: scale(1); transform: scale(1.05); transition: transform 500ms;}
+.grid-overlay{position: absolute; left:0; top:0; width: 100%; height: 100%; background-color: rgba(0,0,0,.8); -ms-transform: scale(.9); -webkit-transform: scale(.9); transform: scale(.9);}
+.grid-overlay:hover, .grid-overlay:hover .portfolio-grid > img{-ms-transform: scale(1); -webkit-transform: scale(1); transform: scale(1.05); transition: transform 500ms;}
+.grid-overlay-blk{background-color: rgba(0,0,0,.8);}
+.portfolio-section-desktop{text-align:center;}
+.portfolio-section-desktop img{width: 100%; height: auto;}
+.portfolio-section-desktop .col{padding-bottom: 30px; flex-basis: unset;}
+
+.portfolio-hover:hover{transform: scale(1.1); transition: transform 500ms}
+
+
+
+
+@media screen and (max-width:1035px){
+    .portfolio-header-bg{font-size: 7em; top: 0px; }
+    .portfolio-header-title{font-size: 2.5em;}
+    .portfolio-text{font-size: 3em;}
+    #portfolio-section{padding-bottom:35px;}
+
+}
+
+@media screen and (max-width:780px){
+    .portfolio-text{font-size: 3em;}
+    .portfolio-item img{width:90%;}
+    .portfolio-header-bg{font-size: 6em; top: 0px;}
+    .portfolio-header-title{font-size: 2em; padding-top:70px;}
+    .portfolio-header-subtext{padding:0 10%; margin: 0px;}
+    .social-flex{margin-top:12px;}
+    .portfolio-signup-btn{width: unset; margin: auto; display: inline-block; margin-top: 15px;}
+    .portfolio-hide-mobile{display: none;}
+
+}
+
+@media screen and (max-width:450px){
+    .portfolio-text{font-size: 1em; line-height: 1.5em;}
+    .portfolio-header-bg{font-size: 4em; top: 0px;}
+    .portfolio-header-title{font-size: 1.7em; padding-top:40px;}
+    .portfolio-header-subtext{padding:0 7%;  margin: 0px;}
+    .social-flex{margin-top:12px;}
+    .sol-block-title-row{display: none;}
+    .portfolio-signup-btn{font-size: 1em;}
+    .portfolio-section-desktop img{width: 80%; height: auto;}
+
+}
+
+@media screen and (max-width:370px){
+.portfolio-header-bg{font-size: 3em;}
+.portfolio-header-title{font-size: 1.2em;}
+.portfolio-text{font-size: 1.2em;}
+}

@@ -1,0 +1,222 @@
+<form [formGroup]="clientProfileForm" (ngSubmit)="saveClientProfileForm()" enctype="multipart/form-data">
+<section id="client-contacts-section" class="">
+  <article id="client-contacts-article" class="">
+    <div id="personal-info-div" class="">
+      <div class="client-img-container">
+        <div
+          id="client-img-div"
+          class="relative client-img-div">
+            <picture>
+              <img
+                id="client-img"
+                class="client-img"
+                *ngIf="clientProfile.payload.clientAvatar"
+                [src]="clientProfile.payload.clientAvatar"
+                alt="Client Avatar"
+                >
+            </picture>
+
+            <div id="avatar-overlay" class="avatar-overlay">
+              <span (click)="openFileUploader()"  class="white"><i class="fa fa-pencil"></i></span>
+            </div>
+
+            <picture *ngIf="!clientProfile.payload.clientAvatar" class="avatar">
+            <img
+            alt="Client Avatar"
+            class="client-img" [src]="'./../../../../../../assets/documents/profiles/default-avatar.png'">
+          </picture>
+          </div>
+
+
+          <input
+          hidden
+          id="upload-profile-pic"
+          class="upload-profile-pic"
+          name="profilepic"
+          type="file"
+          accept="image/*"
+          (change)="onFileSelected($event)">
+      </div><!-- end client-img-container -->
+
+<!-- BELOW IS NEEDED WHEN YOU ADD SAVE BUTTONS TO THE PROFILE PIC -->
+<!-- <div id="submit-div" class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="text-right">
+              <button
+                type="submit"
+                class="btn default-btn-color login-button mr-20">
+                  <span>Save Form</span>
+              </button>
+
+              <button
+              type="reset"
+              (click)="resetForm()"
+              class="btn default-btn-color login-button">
+                <span>Reset</span>
+              </button>
+
+            </div>
+    </div> -->
+<!-- ABOVE IS NEEDED WHEN YOU ADD SAVE BUTTONS TO THE PROFILE PIC -->
+
+  <section class="container-fluid">
+    <article class="row">
+      <div class="col col-md-12 col-lg-12 pt-20 text-center">
+    <!-- <span class="aveNext-demi">
+      <span class="aveNext-demi" *ngIf="!clientProfile.payload.clientFirstName" >My</span>
+      <span class="aveNext-demi" *ngIf="clientProfile.payload.clientFirstName" >{{clientProfile.payload.clientFirstName}}'s</span>
+       Profile</span> -->
+    <span class="last-sign-in"><span class="aveNext-demi">Last Sign In:</span> <span> {{clientProfile.payload.lastSignIn | date:'medium'}}</span></span>
+  </div>
+    </article>
+  </section>
+
+
+  <section>
+    <app-client-details></app-client-details>
+  </section>
+      <!-- <div class="pb-20 mt-20">
+        <span class="f16">Contact Information</span>
+      </div>
+
+      <div>
+        <mat-form-field class="mr-20">
+          <input
+            matInput
+            type="email"
+            formControlName="clientEmail"
+            class="login-input"
+            required
+            placeholder="Email Address"
+            minlength="4"
+            [(ngModel)]="clientProfile.payload.clientEmail">
+            <small *ngIf="emailError"  class="red">Email Address Not Available</small>
+        </mat-form-field>
+
+        <mat-form-field class="mr-20">
+          <input
+            matInput
+            type="tel"
+            formControlName="clientPhone1"
+            class="login-input"
+            placeholder="Primary Phone"
+            minlength="4"
+            [(ngModel)]="clientProfile.payload.clientPhone1">
+        </mat-form-field>
+
+        <mat-form-field class="mr-20">
+          <input
+            matInput
+            type="tel"
+            formControlName="clientPhone2"
+            class="login-input"
+            placeholder="Alternate Phone"
+            minlength="4"
+            [(ngModel)]="clientProfile.payload.clientPhone2">
+        </mat-form-field>
+      </div> -->
+
+
+
+    </div>
+
+
+
+    <!-- <div id="contact-info-section" class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+
+      <div class="mb-10">
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              formControlName="facebookHandle"
+              class="login-input"
+              placeholder="Facebook Handle"
+              minlength="4"
+              [(ngModel)]="clientProfile.payload.facebookHandle">
+          </mat-form-field>
+
+          <mat-slide-toggle
+            class="ml-10"
+            formControlName="enableFacebook"
+            [(ngModel)]="clientProfile.payload.enableFacebook">
+            <span *ngIf="!clientProfile.payload.enableFacebook">Disabled</span>
+            <span *ngIf="clientProfile.payload.enableFacebook">Enabled</span>
+          </mat-slide-toggle>
+      </div>
+
+      <div class="mb-10">
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              formControlName="twitterHandle"
+              class="login-input"
+              placeholder="Twitter Handle"
+              minlength="4"
+              [(ngModel)]="clientProfile.payload.twitterHandle">
+          </mat-form-field>
+
+          <mat-slide-toggle
+            class="ml-10"
+            formControlName="enableTwitter"
+            [(ngModel)]="clientProfile.payload.enableTwitter">
+            <span *ngIf="!clientProfile.payload.enableTwitter">Disabled</span>
+            <span *ngIf="clientProfile.payload.enableTwitter">Enabled</span>
+          </mat-slide-toggle>
+      </div>
+
+      <div class="mb-10">
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              formControlName="instagramHandle"
+              class="login-input"
+              placeholder="Instagram Handle"
+              minlength="4"
+              [(ngModel)]="clientProfile.payload.instagramHandle">
+          </mat-form-field>
+
+          <mat-slide-toggle
+            class="ml-10"
+            formControlName="enableInstagram"
+            [(ngModel)]="clientProfile.payload.enableInstagram">
+            <span *ngIf="!clientProfile.payload.enableInstagram">Disabled</span>
+            <span *ngIf="clientProfile.payload.enableInstagram">Enabled</span>
+          </mat-slide-toggle>
+      </div>
+
+      <div class="mb-10">
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              formControlName="linkedinHandle"
+              class="login-input"
+              placeholder="LinkedIn Handle"
+              minlength="4"
+              [(ngModel)]="clientProfile.payload.linkedinHandle">
+          </mat-form-field>
+
+          <mat-slide-toggle
+            class="ml-10"
+            formControlName="enableLinkedin"
+            [(ngModel)]="clientProfile.payload.enableLinkedin">
+            <span *ngIf="!clientProfile.payload.enableLinkedin">Disabled</span>
+            <span *ngIf="clientProfile.payload.enableLinkedin">Enabled</span>
+          </mat-slide-toggle>
+      </div>
+
+    </div>
+-->
+    <!-- <div id="submit-div" class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <mat-divider class="mt-10 mb-10"></mat-divider>
+    </div> -->
+
+
+
+
+
+  </article>
+</section>
+</form>

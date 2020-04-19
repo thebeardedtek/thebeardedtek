@@ -1,0 +1,79 @@
+.select-plan{background-color: #f0f0f0; padding:3.5% 4% 2%}
+.active{background-color:#1c8de0; color:#FFF;}
+.select-plan:hover{}
+.payment-input{width:100%; border:1px solid rgba(200,200,200,.6); padding:1.5%; min-height: 45px;}
+.payment-input-date{width:100%; border:1px solid rgba(200,200,200,.6); padding-left: 1%;}
+.payment-input:focus{outline:none;}
+#signup-form .mat-form-field-underline{display: none !important;}
+.payment-input-date-div div{}
+
+
+#card-info{width:100%; display: flex; align-items: flex-start;}
+#card-info div{width:100%;}
+
+.pricing-left-column{background-color: #1c8de0; color:#FFF; padding-left: 75px;}
+.pricing-right-column{padding-left: 35px; padding-top: 20px; padding-right:150px; background-color: #f4f4f4;}
+.pricing-left-title, .pricing-left-subtitle{font-size:3.5em; font-family: aveNext-bold, sans-serif;}
+.pricing-right-title{font-size:2.5em; font-family: aveNext-demi, sans-serif; color:#1c8de0;}
+.pricing-right-subtitle{color:rgba(51,51,51,1);}
+
+.package-title{font-family: aveNext-bold, sans-serif;}
+.package-content{font-size:18px;}
+.pricing-left-title span, .pricing-left-subtitle span{font-family: aveNext-bold, sans-serif;}
+.pricing-left-title{opacity: .3; line-height: .5em; margin-top: 40px;}
+.pricing-left-subtitle{}
+
+.signup-flex-item{width: calc(100%/2); padding-right: 12px;}
+.register-flex-item{width: calc(100%/3); padding-right: 12px;}
+.signup-flex{width: 100%; align-items: flex-start; align-content: flex-start;}
+.input-icon{position: absolute; right:5%;}
+.input-hint{font-size: .7em; padding-left: 3px;}
+
+.validate-form{font-size: 1em;}
+#processing-form-modal{position: absolute; background-color: rgba(0,0,0,.85); z-index:99999; display:flex; align-items: center; align-content: center; justify-content: center; height:100%; width:100%;}
+.processing-form-modal-content{background-color: rgba(245,245,245,1); padding:4% 3%;}
+.processing-form-modal-content .mat-progress-spinner circle, .processing-form-modal-content .mat-spinner circle{stroke:#1c8de0 !important}
+.mat-dialog-content-alt{justify-content: center; display:flex;}
+
+.validate-form-list li{margin-bottom:12px;}
+#mobile-purchase-submit-button{display:none;}
+
+
+
+@media screen and (max-width:1300px){
+
+}
+
+@media screen and (max-width:1035px){
+.pricing-left-title{font-size:2.5em;}
+.pricing-left-subtitle{font-size:2.4em;}
+.package-content{font-size: 15px;}
+.pricing-left-column{padding-left: 35px;}
+.purchase-button{font-size: .6em; border-radius: 0px !important; margin-bottom:15px;}
+.signup-flex{display: block;}
+.register-flex-item{width: 100%;}
+.signup-flex-item{width: 100%;}
+#card-info{display: block;}
+#card-info div{width: 100%;}
+.pricing-right-column{padding-left: 25px; padding-top: 20px; padding-right: 30px;}
+.card-field{width: 60%;}
+}
+
+
+@media screen and (max-width:780px){
+.purchase-button{margin:25px 0;}
+.purchase-button-mobile{font-size:1.4em;}
+#mobile-purchase-submit-button{display:block; text-align: center;}
+}
+
+@media screen and (max-width:770px){
+
+}
+
+@media screen and (max-width:450px){
+
+}
+
+@media screen and (max-width:370px){
+
+}

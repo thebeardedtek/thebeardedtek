@@ -1,0 +1,9 @@
+.main-side-bar-courses{margin-top: 30px; margin-bottom: 30px;}
+.courses-header{margin-bottom: 30px; font-size: 1.5em; text-align: center; margin-right: 12px;}
+.course-flex{display: flex; align-items: center; justify-content: start; margin-bottom: 30px;}
+.course-img{height: 50px; width: 50px; background-color:#1c8de0; border-radius: 50%; margin-right: 12px;}
+.course-title{font-size: 1.1em;}
+.course-status{font-size:.7em; color: #FFF; padding:5px 7px; margin-top: 5px;}
+.in-progress{background-color:#1c8de0;}
+.suggested{background-color: orange;}
+.recently-completed{background-color: green;}

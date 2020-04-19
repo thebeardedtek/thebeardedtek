@@ -1,0 +1,21 @@
+#contact-home-svg{position: absolute; z-index: 0; top:0; left:0;}
+.contact-home-img{width: 100%; max-width: 35%; height: auto; z-index: 0; position: absolute; right: 100px; top: 200px;}
+#contact-home-svg-bg{z-index: 0; position: absolute;}
+
+
+@media screen and (max-width:1175px){
+}
+
+@media screen and (max-width:1080px){
+    .contact-home-img{max-width: 45%; right: 20px;}
+
+    }
+
+@media screen and (max-width:780px){
+
+}
+
+@media screen and (max-width:450px){
+    #app-contact-home-section{padding-left: 15px !important;}
+
+}

@@ -1,0 +1,62 @@
+/* #maintenance-widget{padding: 2% 9%;} */
+.maintenance-plan-hp{margin: 2em 0 0}
+.maintenance-row-hp{border: 1px solid rgba(51,51,51,.2); padding: 3em 1em 2em;}
+.maintenance-desc-title{font-size: 2em; font-family: ave-reg, sans-serif}
+.maintenance-desc-title span{display: block; font-family: aveNext-ul, sans-serif}
+.maintenance-title{font-family: aveNext-reg, sans-serif;}
+.maintenance-number{color:#1187de; font-family: aveNext-bold, sans-serif; font-size: 4em; line-height: 1em;}
+.maintenance-number sup{font-size: .5em;}
+.maintenance-term{color:#1187de; font-family: aveNext-bold, sans-serif; font-size: 2em; line-height: 1.35em !important;}
+.maintenance-term-desc{display: block; font-size: .8em; margin-bottom: 10px;}
+.maintenance-disclosure{margin-top: 8px;}
+.maintenance-disclosure span,.maintenance-disclosure{font-size: .9em; text-align: center; font-family: aveNext-ul, sans-serif;}
+.maintenance-disclosure span{display: block;}
+.maintenance-border-hp{border-right: 1px solid #1187de;}
+.maintenance-includes{display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; align-items: center; justify-content: center;}
+.maintenance-includes li{padding-bottom: 5px;}
+.maintenance-includes i{color: green;}
+#maintenance-widget{margin-bottom: 3em;}
+#maintenance-widget-header{margin: 2em 0;}
+.maintenance-widget-header-title{font-size: 4em; font-family: aveNext-bold; color: #111; text-align: center}
+.signup-btn{margin-top:25px;}
+
+.signup-link:hover{cursor: pointer;}
+.maintenance-border-hp:last-of-type{border-right: none;}
+@media screen and (max-width:1035px) {
+.maintenance-plan-hp h2{text-align: center;}
+.maintenance-border-hp{border:none; border-right:none;}
+.maintenance-row-hp{border:none; margin: auto; padding-top: 0;}
+.maintenance-block{border:1px solid rgba(0,0,0,.2); padding:20px; margin:20px 0;}
+}
+
+@media screen and (max-width:780px) {
+.monthly-pricing{padding-top: 40px;}
+.maintenance-desc-title{text-align: center;}
+.maintenance-desc-blurb{font-size: 1.2em;}
+.maintenance-sol{border:none;}
+.maintenance-row-hp{padding: 0em 7em 2em;}
+}
+
+@media screen and (max-width:780px) {
+.maintenance-row-hp{padding: 0em 3em 2em;}
+}
+
+@media screen and (max-width:450px) {
+.maintenance-block{padding: 0px; border: none;}
+.maintenance-block2{margin-top:40px;}
+.maintenance-row-hp{border:none; width: 90%; display: block;}
+.maintenance-container{display: none;}
+.maintenance-block2 .btn{margin-left: -15px;}
+.maintenance-block1 .maintenance-number, .maintenance-block2 .maintenance-number{margin-left: -10px;}
+.maintenance-block3 .maintenance-number{margin-left: -35px;}
+.maintenance-number{font-size: 4em;}
+.maintenance-term{font-size: 1.5em;}
+.signup-btn{text-align: center;}
+#maintenance-widget-header{margin-bottom: 0px}
+.maintenance-widget-header-title{font-size: 3em;}
+}
+
+@media screen and (max-width:370px) {
+.maintenance-number{font-size: 3em;}
+.maintenance-row-hp{padding: 0em 1em 2em; width: 100%; display: block; flex-basis: unset; flex-grow: unset;}
+}

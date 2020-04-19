@@ -1,0 +1,77 @@
+.home-cta-img{overflow: hidden;}
+.home-cta-img picture{border:10px solid white;}
+.home-cta-img img, .home-cta-img source{max-width:100%; height:auto;}
+.home-cta-col{padding: 2%;}
+.home-cta-title{font-size: 1.5em; text-align: center; color: rgba(0,0,0,0.7);}
+.home-cta-text{position: absolute; z-index: 9; text-align: center; border: 5px solid #FFF;}
+.home-cta-text-content{color:#fff; }
+.home-cta-text-content span{display: block;}
+.home-cta-top-text{font-family: aveNext-bold, sans-serif !important; font-size: 4em; text-transform: uppercase; line-height: 1em;}
+.home-cta-bottom-text{font-family: aveNext-reg, sans-serif !important; font-size: 2.9em; text-transform: uppercase; line-height: 1em;}
+.cta-overlay{background-color: rgba(16, 117, 191,.8); position: absolute; top:10px; left:10px; z-index:99; text-align: center;}
+
+.overlay-blue{background-color: rgba(16, 117, 191,.8);}
+.overlay-yellow{background-color: rgba(240, 187, 32,.8)}
+.overlay-black{background-color: rgba(0, 0, 0,.8);}
+.overlay-icon{color:#FFF; text-align: left;}
+.overlay-title{font-size: 1.8em; color:#FFF; padding-bottom:15%;}
+.overlay-subtitle{}
+
+/* .cta-overlay{display:none;} */
+@media screen and (min-width:1241px){
+
+}
+
+@media screen and (max-width:1240px){
+
+}
+
+@media screen and (max-width:1035px){
+.home-cta-title{font-size: 1.2em;}
+.home-cta-col{padding: 0%;}
+.overlay-title{font-size: 1.3em;}
+/* .cta-overlay{left:68px;} */
+.home-cta-top-text{font-size: 3em;}
+.home-cta-bottom-text{font-size: 2.1em;}
+}
+
+@media screen and (max-width:780px){
+.overlay-subtitle{font-size: 1em;}
+.home-cta-text{font-size: 1.75em;}
+
+
+.overlay-title{font-size: 1.1em;}
+.home-cta-top-text{font-size: 1.5em;}
+.home-cta-bottom-text{font-size: 1.1em;}
+.home-cta-title{font-size: 1em;}
+
+}
+
+@media screen and (max-width:750px){
+.home-cta-col{text-align: center;}
+.home-cta-title{font-size: 1.5em;}
+}
+
+@media screen and (max-width:680px){
+
+}
+
+@media screen and (max-width:650px){
+
+}
+
+@media screen and (max-width:450px){
+.home-cta-section .row{display:block; width: 100%; margin: auto;}
+.home-cta-section.container-fluid{padding-right: 0; padding-left: 0;}
+.home-cta-img img, .home-cta-img source{border:none; max-width: 95%;}
+.home-cta-title{padding: 0 5%; font-size: 1.2em; margin-top: 10px;}
+.home-cta-col2{display: none;}
+.home-cta-top-text{font-size: 2.5em;}
+.home-cta-bottom-text{font-size: 1.8em;}
+}
+
+@media screen and (max-width:380px){
+
+}
+
+/* class="home-cta-section container-fluid" */

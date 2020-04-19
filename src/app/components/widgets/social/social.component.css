@@ -1,0 +1,9 @@
+.app-social-list{position:fixed; top:40%; right:0; background-color: #1c8de0; z-index: 9999;}
+.app-social-list i{font-size:1.5em; color: #FFF}
+.app-social-list li{padding:10%; border-bottom: 2px solid rgba(0,0,0,.2);}
+.app-social-list li i{padding:10px 14px 10px 10px;}
+.app-social-list li:hover {background-color: #3d9fe9 !important;}
+.app-social-list li:hover i{color: #FFF;}
+/* padding-bottom: 12px; border-bottom: 2px solid rgba(0,0,0,.2); padding-bottom: 5px; padding-top: 5px; */
+
+/* 1075bf */

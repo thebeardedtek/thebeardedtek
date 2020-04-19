@@ -1,0 +1,53 @@
+.login-modal{padding:100px; display: flex; align-content: center; align-items: center; justify-content: center; position: fixed; top:0; left:0; z-index:9999; height: 100vh; width: 100vw; background-color: rgba(0,0,0,.4);}
+.modal-article{max-width: 450px; background-color: #fff; box-shadow: 0 0 100px rgba(0,0,0,.4);
+}
+.logout-article{max-width: 450px;}
+.modal-div{padding: 8%;}
+.modal-div-logout{border-bottom: 3px solid #1c8de0;}
+.login-header{margin-bottom: 30px; font-size: 1.5em; text-align: center;}
+.login-input{}
+.close-box{cursor: pointer;}
+.login-button{width:100%; margin: 15px 0;}
+.no-hover{cursor: not-allowed;}
+.signin-with{margin-bottom: 25px;}
+.signin-icons{margin-bottom: 20px;}
+.signin-icons div{background-color: white; padding: 10px 40px; box-shadow: 0 0 10px 0 rgba(0,0,0,.3); border-radius: 50px; margin: 0 5px;}
+.signin-icons i{color:#1c8de0;}
+.signin-icons div:hover{cursor: pointer; color:#FFF; background-color: #1c8de0;}
+.signin-icons div:hover i{color:#FFF;}
+.logout-confirm{font-size: 1.2em; margin-bottom: 20px;}
+.logout-confirm i{font-size: 1.5em;}
+.logout-buttons{text-align: center;}
+.logout-buttons i {padding-right: 8px;}
+.logout-buttons button:first-of-type{margin-right: 20px;}
+
+.mat-form-field{display:block;}
+.exit-modal:hover{cursor: pointer;}
+
+@media screen and (max-width:1245px){
+}
+
+@media screen and (max-width:1035px){
+}
+
+@media screen and (max-width:780px){
+}
+
+
+@media screen and (max-width:769px){
+}
+
+@media screen and (max-height:680px){
+}
+
+@media screen and (max-height:650px){
+}
+
+@media screen and (max-height:575px){
+}
+
+@media screen and (max-width:450px){
+}
+
+@media screen and (max-width:370px){
+}

@@ -1,0 +1,145 @@
+<div class="text-center pb-20 price-toggle">
+  <mat-slide-toggle
+(click)="togglePricing()">
+  <span *ngIf="period === 'YEARLY'">View Monthly Pricing</span>
+  <span *ngIf="period === 'MONTHLY'">View One-Time Pricing</span>
+</mat-slide-toggle>
+</div>
+
+
+
+
+<section *ngIf="!checked && period === 'YEARLY'" id="pricing-widget" class="pricing-widget container">
+<div class="row pricing-row-hp text-center">
+<div *ngIf="pricingPlans.core" class="pricing-block pricing-block0 col col-xs-12 col-sm-12 col-md-12 col-lg-4 pricing-border-hp">
+
+<p class="pricing-title">Flat Fee</p>
+<p class="pricing-number"><sup>$</sup>{{pricingPlans.core.yr_price}}</p>
+
+<p class="pricing-term">{{pricingPlans.core.package_name}}: <span class="pricing-term-desc">get started</span></p>
+
+<div class="pricing-includes"><ul class="text-left">
+<li><i class="fa fa-check"></i> Up To 7 Pages</li>
+<li><i class="fa fa-check"></i> Content Management System</li>
+<li><i class="fa fa-check"></i> $5<small>/mo</small> Hosting</li>
+<li><i class="fa fa-check"></i> Free Domain</li>
+<li><i class="fa fa-check"></i> Discount Graphics</li>
+<li><i class="fa fa-check"></i> Free Stock Photography</li>
+</ul></div>
+
+<p class="pricing-disclosure">Cancel anytime. <span>Upgrade your plan with ease.</span></p>
+<div class="signup-btn"><a (click)="selectPlan('core')" class="color default-btn-color ave-md">Select Core</a></div>
+</div>
+
+<div *ngIf="pricingPlans.plus" class="pricing-block pricing-block1 col col-xs-12 col-sm-12 col-md-12 col-lg-4 pricing-border-hp">
+
+<p class="pricing-title">Flat Fee</p>
+<p class="pricing-number"><sup>$</sup>{{pricingPlans.plus.yr_price}}</p>
+
+<p class="pricing-term">{{pricingPlans.plus.package_name}}: <span class="pricing-term-desc">get started</span></p>
+
+<div class="pricing-includes"><ul class="text-left">
+<li><i class="fa fa-check"></i> Unlimited Pages</li>
+<li><i class="fa fa-check"></i> Unlimited Graphics</li>
+<li><i class="fa fa-check"></i> Free Hosting/w SSL</li>
+<li><i class="fa fa-check"></i> Free Domain</li>
+<li><i class="fa fa-check"></i> eCommerce</li>
+<li><i class="fa fa-check"></i> Keywords/Meta</li>
+</ul></div>
+
+<p class="pricing-disclosure">Cancel anytime. <span>Upgrade your plan with ease.</span></p>
+<div class="signup-btn"><a (click)="selectPlan('plus')" class="color default-btn-color ave-md">Select Plus</a></div>
+</div>
+
+<hr class="show-on-mobile hr-mobile">
+
+<div *ngIf="pricingPlans.marketing" class="pricing-block pricing-block2 col col-xs-12 col-sm-12 col-md-12 col-lg-4 pricing-border-hp">
+
+<p class="pricing-title">Flat Fee</p>
+<p class="pricing-number"><sup>$</sup>{{pricingPlans.marketing.yr_price}}</p>
+<p class="pricing-term">{{pricingPlans.marketing.package_name}}: <span class="pricing-term-desc">serious selling</span></p>
+
+<div class="pricing-includes"><ul class="text-left">
+<li><i class="fa fa-check"></i> Ad Campaigns/PPC</li>
+<li><i class="fa fa-check"></i> Organic SEO</li>
+<li><i class="fa fa-check"></i> Social Media Management</li>
+<li><i class="fa fa-check"></i> Video Production</li>
+<li><i class="fa fa-check"></i> Blogging/Posts</li>
+<li><i class="fa fa-check"></i> Professional Photography</li>
+</ul></div>
+
+<p class="pricing-disclosure">Cancel anytime. <span>Plus Package Features included.</span></p>
+<div class="signup-btn"><a (click)="selectPlan('marketing')" class="color default-btn-color ave-md">Select Marketing</a></div>
+</div>
+
+<hr class="show-on-mobile hr-mobile">
+
+</div>
+</section>
+
+<section *ngIf="checked && period === 'MONTHLY'" id="pricing-widget" class="pricing-widget container">
+<div class="row pricing-row-hp text-center">
+<div *ngIf="pricingPlans.core" class="pricing-block pricing-block0 col col-xs-12 col-sm-12 col-md-12 col-lg-4 pricing-border-hp">
+
+<p class="pricing-title">Plans start at</p>
+<p class="pricing-number"><sup>$</sup>{{pricingPlans.core.mo_price}}<span class="per-mo">/mo</span></p>
+
+<p class="pricing-term">{{pricingPlans.core.package_name}}: <span class="pricing-term-desc">get started</span></p>
+
+<div class="pricing-includes"><ul class="text-left">
+<li><i class="fa fa-check"></i> Up To 7 Pages</li>
+<li><i class="fa fa-check"></i> Content Management System</li>
+<li><i class="fa fa-check"></i> $5<small>/mo</small> Hosting</li>
+<li><i class="fa fa-check"></i> Free Domain</li>
+<li><i class="fa fa-check"></i> Discount Graphics</li>
+<li><i class="fa fa-check"></i> Free Stock Photography</li>
+</ul></div>
+
+<p class="pricing-disclosure">Cancel anytime. <span>Upgrade your plan with ease.</span></p>
+<div class="signup-btn"><a (click)="selectPlan('core')"class="color default-btn-color ave-md">Select Core</a></div></div>
+
+<div *ngIf="pricingPlans.plus" class="pricing-block pricing-block1 col col-xs-12 col-sm-12 col-md-12 col-lg-4 pricing-border-hp">
+
+<p class="pricing-title">Plans start at</p>
+<p class="pricing-number"><sup>$</sup>{{pricingPlans.plus.mo_price}}<span class="per-mo">/mo</span></p>
+
+<p class="pricing-term">{{pricingPlans.plus.package_name}}: <span class="pricing-term-desc">get started</span></p>
+
+<div class="pricing-includes"><ul class="text-left">
+<li><i class="fa fa-check"></i> Unlimited Pages</li>
+<li><i class="fa fa-check"></i> Unlimited Graphics</li>
+<li><i class="fa fa-check"></i> Free Hosting/w SSL</li>
+<li><i class="fa fa-check"></i> Free Domain</li>
+<li><i class="fa fa-check"></i> eCommerce</li>
+<li><i class="fa fa-check"></i> Standard Maintenance Pkg</li>
+</ul></div>
+
+<p class="pricing-disclosure">Cancel anytime. <span>Upgrade your plan with ease.</span></p>
+<div class="signup-btn"><a (click)="selectPlan('plus')"class="color default-btn-color ave-md">Select Plus</a></div></div>
+
+<hr class="show-on-mobile hr-mobile">
+
+<div *ngIf="pricingPlans.marketing" class="pricing-block pricing-block2 col col-xs-12 col-sm-12 col-md-12 col-lg-4 pricing-border-hp">
+
+<p class="pricing-title">Plans start at</p>
+<p class="pricing-number"><sup>$</sup>{{pricingPlans.marketing.mo_price}}<span class="per-mo">/mo</span></p>
+<p class="pricing-term">{{pricingPlans.marketing.package_name}}: <span class="pricing-term-desc">serious selling</span></p>
+
+<div class="pricing-includes"><ul class="text-left">
+<li><i class="fa fa-check"></i> Ad Campaigns/PPC</li>
+<li><i class="fa fa-check"></i> Organic SEO</li>
+<li><i class="fa fa-check"></i> Social Media Management</li>
+<li><i class="fa fa-check"></i> Video Production</li>
+<li><i class="fa fa-check"></i> Blogging/Posts</li>
+<li><i class="fa fa-check"></i> Professional Photography</li>
+
+</ul></div>
+
+<p class="pricing-disclosure">Cancel anytime. <span>Plus Package Features included.</span></p>
+<div class="signup-btn"><a (click)="selectPlan('marketing')"class="color default-btn-color ave-md">Select Marketing</a></div></div>
+
+<hr class="show-on-mobile hr-mobile">
+</div>
+</section>
+
+

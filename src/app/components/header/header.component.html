@@ -1,0 +1,92 @@
+<header id="header" class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 header" [ngClass]="isHomePage() ? 'header-transparent' : 'header-color'" detect-scroll (onScroll)="changeHeaderClass($event)" [topOffset]="150"    >
+    <div class="row">
+      <!-- (onScroll)="onScrollHeader($event)" [topOffset]="200" [bottomOffset]="200"  -->
+        <div class="col col-xs-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 logo-div">
+            <span id="logo" class="logo ave-blk"><a href="/">
+            <span class="ave-ul">THE</span> <span class="ave-blk">BEARDED</span> <span class="ave-blk color">TEK</span>
+            </a></span>
+        </div>
+
+    <div class="col col-xs-6 col-sm-6 col-md-6 col-lg-9 col-xl-9 text-right">
+        <nav id="menu" class="menu-nav">
+          <ng-container *ngFor="let parent of parentMenu">
+            <li *ngIf="parent.isEnabled && parent.code !== 'MANAGE_ACCOUNT' && parent.isEnabled && parent.code !== 'BECOME_A_CLIENT' || parent.isEnabled && !checkLoginStatus() && parent.code !== 'MANAGE_ACCOUNT' || parent.isEnabled && checkLoginStatus() && parent.code !== 'BECOME_A_CLIENT'" title="{{parent.name}}"   id="{{parent.name}}" class="menu-link has-children" [ngClass]="[parent.isButton ? 'menu-highlight' : '', parent.name]" (mouseover)="hoverMenu(parent.name)" (mouseleave)="hideMenu()"><a routerLink="/{{parent.url}}" routerLinkActive="activeRouterLink">{{parent.label}} <span *ngIf="parent.hasChildren" class="aveNext-ul"><i class="fa fa-chevron-down"></i></span></a>
+
+            <ng-container *ngIf="dropdown === parent.name && parent.hasChildren">
+            <ul id="menu-dropdown" class="mobile-apps-dropdown menu-dropdown">
+              <ng-container *ngFor="let child of childMenu" >
+                <li *ngIf="child.parentCode === parent.code && child.isEnabled" id="{{child.name}}" class="menu-link" title="{{child.name}}">
+                <a routerLink="/{{child.url}}" routerLinkActive="activeRouterLink">{{child.label}}</a>
+              </li>
+              </ng-container>
+            </ul>
+            </ng-container>
+            </li>
+            </ng-container>
+
+
+            <li id="menu-link-login" class="menu-link">
+              <button
+              title="Sign In"
+              class="default-btn-color login-btn"
+              (click)="toggleLoginModal()"
+              *ngIf="!checkLoginStatus()"
+              >
+              <i class="fa fa-sign-in"></i>
+              </button>
+
+              <button
+              title="Sign Out"
+              class="login-btn logged-in"
+              (click)="toggleLogOutModal()"
+              *ngIf="checkLoginStatus()"
+              >
+              <i class="fa fa-sign-out"></i>
+              </button>
+            </li>
+        </nav>
+
+        <div class="mobile-menu-toggle" title="Mobile Menu"><i (click)="toggleMobileMenu()" class="fa fa-bars"></i></div>
+
+    </div>
+    </div>
+</header>
+
+
+<section id="mobile-menu" *ngIf="showMobileMenu === true" class="container-fluid mobile-menu-nav animated slideInLeft durationNone delayNone">
+    <article id="mobile-nav-header" class="row mobile-nav-header">
+
+      <div class="col col-xs-9 col-sm-9 col-md-9 col-lg-9 col-xl-9">
+        <div class="mobile-header-logo">
+          <a href="/" color="white">
+            <span class="aveNext-ul">the</span>
+            <span class="aveNext-bold">bearded</span>
+            <span class="aveNext-demi">tek</span>
+          </a>
+        </div>
+      </div>
+      <div class="exit-mobile-form-col col col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+        <div class="exit-mobile-form">
+          <i (click)="toggleMobileMenu()" class="fa fa-times-circle fa-2x"></i>
+        </div>
+      </div>
+
+    </article>
+
+    <article class="row mobile-menu-row">
+        <nav class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mobile-menu-col">
+
+        <div>
+
+          <ul class="mobile-menu-list">
+          <li *ngFor="let parent of mobileParentMenu" title="{{parent.name}}" id="{{parent.name}}"><a routerLink="/{{parent.url}}" routerLinkActive="activeRouterLink" class="aveNext-reg" (click)="toggleMobileMenu()">{{parent.label | lowercase}}</a></li>
+
+          <li id="mobile-menu-link-contact" class="mobile-menu-link"><a routerLink="/contact" routerLinkActive="activeRouterLink" (click)="toggleMobileMenu()">contact</a></li>
+          </ul>
+
+        </div>
+    </nav>
+    </article>
+</section>
+
+<app-login-modal *ngIf="showLoginModal || showLogoutModal"  [showLoginModal]="showLoginModal" [showLogoutModal]="showLogoutModal" (hideLoginModal)="receiveModalChange($event)" (hideLogoutModal)="receiveModalChangeOut($event)"></app-login-modal>

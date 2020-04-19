@@ -1,0 +1,90 @@
+<section id="home-cta-section" class="home-cta-section container-fluid">
+
+<article id="home-cta-article" class="home-cta-article row">
+
+<div id="" class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 home-cta-col home-cta-col1">
+<a routerLink="/web-design">
+  <div class="home-cta-img relative flex-container">
+    <div *ngIf="hoverActive === 'home-cta-img1'" class="cta-overlay overlay-blue flex-container animated delayNone slideInLeft durationHalf" [ngStyle]="getCTAHeight('home-cta-img1')">
+      <div>
+        <div class="overlay-icon"><span><i class="fa fa-heart-o"></i> 232 clients</span></div>
+        <div class="overlay-title aveNext-demi">Create a Website Today!</div>
+        <div class="overlay-subtitle"></div>
+        <div><a class="color default-btn ave-md" routerlink="/web-design">Get Started</a></div>
+      </div>
+    </div>
+
+    <div class="home-cta-text" *ngIf="hoverActive !== 'home-cta-img1'">
+      <div class="home-cta-text-content"><span class="home-cta-top-text">Small</span> <span class="home-cta-bottom-text">Business</span></div>
+    </div>
+
+    <picture id="home-cta-img1">
+      <source srcset="./../../../../assets/hero/hero-cta-5.webp" type="image/webp" alt="Small Business Apps & Websites">
+      <img src="./../../../../assets/hero/hero-cta-5.jpg" type="image/jpeg" alt="Small Business Apps & Websites"/>
+    </picture>
+  </div>
+</a>
+
+  <div class="home-cta-title aveNext-demi">
+   Mobile Apps <span class="color">&</span> Websites
+  </div>
+</div>
+
+<div id="" class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 home-cta-col home-cta-col2">
+
+<a routerLink="/learn-to-code">
+  <div class="home-cta-img relative flex-container">
+    <div *ngIf="hoverActive === 'home-cta-img2'" class="cta-overlay overlay-black flex-container animated delayNone slideInUp durationHalf" [ngStyle]="getCTAHeight('home-cta-img2')">
+      <div>
+        <div class="overlay-icon"><span><i class="fa fa-graduation-cap"></i> over 1,200 students certified</span></div>
+        <div class="overlay-title aveNext-demi">Start Learning Today!</div>
+        <div class="overlay-subtitle"></div>
+        <div><a class="color default-btn ave-md" routerlink="/learn-to-code">Get Started</a></div>
+      </div>
+    </div>
+
+    <picture id="home-cta-img2">
+      <source srcset="./../../../../assets/hero/hero-cta-2.webp" type="image/webp" alt="Become a software engineer">
+      <img src="./../../../../assets/hero/hero-cta-2.jpg" type="image/jpeg" alt="Become a software engineer"/>
+    </picture>
+  </div>
+</a>
+
+<div class="home-cta-title aveNext-demi">
+    Become a Software Engineer
+  </div>
+</div>
+
+<div id="" class="col col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 home-cta-col home-cta-col3">
+<a routerLink="/marketing">
+  <div class="home-cta-img relative flex-container">
+    <div *ngIf="hoverActive === 'home-cta-img3'" class="cta-overlay overlay-yellow flex-container animated delayNone slideInRight durationHalf" [ngStyle]="getCTAHeight('home-cta-img3')">
+      <div>
+        <div class="overlay-icon"><span><i class="fa fa-line-chart"></i> over 500 marketing freebies</span></div>
+        <div class="overlay-title aveNext-demi">Start Branding Today!</div>
+        <div class="overlay-subtitle"></div>
+        <div><a class="color default-btn ave-md" routerlink="/marketing">Get Started</a></div>
+      </div>
+    </div>
+
+    <div class="home-cta-text"  *ngIf="hoverActive !== 'home-cta-img3'">
+      <div class="home-cta-text-content"><span class="home-cta-top-text">SEO/SEM</span> <span class="home-cta-bottom-text">marketing</span></div>
+    </div>
+
+    <picture id="home-cta-img3">
+      <source srcset="./../../../../assets/hero/hero-cta-3.webp" type="image/webp" alt="Become a software engineer">
+      <img src="./../../../../assets/hero/hero-cta-3.jpg" type="image/jpeg" alt="Become a software engineer"/>
+    </picture>
+  </div>
+</a>
+
+
+<div class="home-cta-title aveNext-demi">
+    Rethink Your Marketing Strategy
+  </div>
+</div>
+
+
+</article>
+
+</section>

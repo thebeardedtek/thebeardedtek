@@ -1,0 +1,89 @@
+<div id="app-social" class="app-social"><app-social></app-social></div>
+<app-page-header></app-page-header>
+<section class="container-fluid pt-110 mobile-padding-fix">
+  <article class="row">
+    <!-- BEGINS THE LEFT ASIDE -->
+<aside id="page-template-body-aside" class="page-template-body-aside col col-xs-3 col-sm-3 col-md-5 col-lg-3 col-xl-3">
+
+  <section id="portfolio-sidebar-section" class="portfolio-sidebar-section container-fluid">
+  <article id="portfolio-sidebar-article" class="portfolio-sidebar-article row">
+    <div id="portfolio-sidebar-col" class="portfolio-sidebar-col col col-xs-12 col col-sm-12 col col-md-12 col col-lg-12 col col-xl-12">
+      <mat-card>
+        <mat-card-title
+        class="mat-card-title client-title"
+        id="client-title">
+          <span class="aveNext-demi">Filter Portfolio</span>
+        </mat-card-title>
+
+        <span class="aveNext-ul">Start your online business and begin selling today! Search my portfolio and gain inspiration from other projects.</span>
+        <div class="pb-30"></div>
+      <form name="portfolioFilterForm" [formGroup]="portfolioFilter" (ngSubmit)="searchPortfolio()">
+
+      <mat-card-title id="client-title" class="mat-card-title client-title">
+            <span class="aveNext-demi">Filter by Categories</span>
+      </mat-card-title>
+
+      <div class="filter-by-cat-title">
+        <button type="button" class="btn default-btn-border" [ngClass]="activeCategory === webapp.code ? 'active-category' : ''"  (click)="filterByCategory(webapp)"  *ngFor="let webapp of webappTypes">
+          <i class="fa fa-tag"></i>
+          {{webapp.name}}
+        </button>
+      </div>
+      <div class="pb-30"></div>
+      <mat-card-title
+        class="mat-card-title client-title"
+        id="client-title">
+          <span class="aveNext-demi">Recent Projects</span>
+      </mat-card-title>
+
+      <div class="col col-xs-12 col col-sm-12 col col-md-12 col col-lg-12 col col-xl-12">
+        <div class="container-fluid no-padding">
+          <div class="row">
+            <div *ngFor="let recent of recentItems" class="col col-md-4 col-lg-4 col-xl-4 recent-items no-padding">
+        <a href="{{base}}/assets/portfolio/design/{{recent.srcLarge}}" data-fancybox="images" title="{{recent.caption}}">
+
+        <picture>
+          <source class="portfolio-hover" media="(max-width: 768px)" srcset="{{base}}/assets/portfolio/design/{{recent.srcSmall}}" type="image/webp" alt="Web Design, HTML, CSS, Wordpress">
+          <source class="portfolio-hover" srcset="{{base}}/assets/portfolio/design/{{recent.srcMedium}}" type="image/webp" alt="Web Design, HTML, CSS, Wordpress">
+          <img class="portfolio-hover" src="{{base}}/assets/portfolio/design/{{recent.srcLarge}}" alt="{{recent.stringTags}}" type="image/jpeg"/>
+        </picture>
+        </a>
+      </div>
+          </div>
+        </div>
+      </div>
+
+    </form>
+    </mat-card>
+
+      </div></article></section>
+
+
+
+    <!--<app-main-sidebar class="hide-on-mobile"></app-main-sidebar>-->
+    <app-courses-sidebar class="hide-on-mobile"></app-courses-sidebar>
+</aside>
+<!-- ENDS THE LEFT ASIDE -->
+
+<!-- MAIN CONTENT -->
+    <div class="col col-xs-12 col-sm-12 col-md-7 col-lg-9 col-xl-9 main-portfolio-content">
+      <section id="portfolio-section" class="container-fluid">
+        <div id="portfolio-section-desktop-row" class="row portfolio-section-desktop">
+
+          <div *ngFor="let portfolio of portfolioItems" class="col col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+            <a href="{{base}}/assets/portfolio/design/{{portfolio.srcLarge}}" data-fancybox="images" title="{{portfolio.caption}}">
+
+        <picture>
+          <source class="portfolio-hover" media="(max-width: 768px)" srcset="{{base}}/assets/portfolio/design/{{portfolio.srcSmall}}" type="image/webp">
+          <source class="portfolio-hover" srcset="{{base}}/assets/portfolio/design/{{portfolio.srcMedium}}" type="image/webp">
+          <img class="portfolio-hover" src="{{base}}/assets/portfolio/design/{{portfolio.srcLarge}}" alt="{{portfolio.stringTags}}" type="image/jpeg"/>
+        </picture>
+        </a>
+        </div>
+
+        </div>
+      </section>
+    </div>
+<!-- MAIN CONTENT -->
+  </article>
+</section>

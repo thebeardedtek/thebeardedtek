@@ -1,0 +1,40 @@
+#pricing-widget-mobile{display:none;}
+.pricing-cta{background-color:#f4f6f8; border-top:2px solid rgba(200,200,200,.3); border-bottom:2px solid rgba(200,200,200,.3);}
+
+
+@media screen and (min-width:1241px){
+
+}
+
+@media screen and (max-width:1240px){
+
+}
+
+@media screen and (max-width:1035px){
+
+}
+
+@media screen and (max-width:780px){
+
+}
+
+@media screen and (max-width:750px){
+
+}
+
+@media screen and (max-width:680px){
+#pricing-widget-mobile{display:block;}
+#pricing-widget-desktop, #pricing-table-questions{display:none;}
+}
+
+@media screen and (max-width:650px){
+
+}
+
+@media screen and (max-width:450px){
+.hide-on-mobile{display: none;}
+}
+
+@media screen and (max-width:380px){
+
+}

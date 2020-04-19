@@ -1,0 +1,59 @@
+#client-tesimonials-section{background: linear-gradient(135deg,#116290 0%,#2092ca 100%); background-size: cover !important; background-position: center; position:relative; padding:1.3% 20% 1%; color:#FFF; font-family: aveNext-reg, sans-serif; font-family: aveNext-reg, sans-serif; font-size: 1.1em;}
+.client-tesimonials-div{}
+#client-tesimonials-section{color:#FFF;}
+.google-review-btn{border: 1px solid rgba(255,255,255,1); padding:1.5% 4%; color:#FFF; border-radius: 10px;}
+.google-review-btn:hover{background-color: #FFF; color:#116290;}
+.testimonial-blurb{margin-bottom: 20px;}
+.active{color:yellow}
+.select-review-buttons{font-size: 1.2em;}
+.select-review-buttons span{margin:0 .7%}
+.background-quotes{position: absolute; top:0%; right:5%; font-size: 13em; opacity: .3; z-index:0;
+font-family: Georgia, 'Times New Roman', Times, serif;
+}
+/* .select-review-buttons i{font-family: aveNext-reg, sans-serif;} */
+
+
+@media screen and (min-width:1241px){
+
+}
+
+@media screen and (max-width:1240px){
+
+}
+
+
+@media screen and (max-width:1035px){
+
+}
+
+@media screen and (max-width:780px){
+.client-tesimonials-article2{display: block; text-align: center; margin: auto;}
+.client-tesimonials-article2 div{max-width: unset; width:100%; text-align: center !important;}
+.client-tesimonials-article2 div{margin-bottom: 20px;}
+}
+
+@media screen and (max-width:750px){
+
+}
+
+@media screen and (max-width:680px){
+
+}
+
+@media screen and (max-width:650px){
+#client-tesimonials-section{display: none;}
+}
+
+@media screen and (max-width:450px){
+
+}
+
+@media screen and (max-width:385px){
+
+}
+
+@media screen and (max-width:330px){
+
+}
+
+

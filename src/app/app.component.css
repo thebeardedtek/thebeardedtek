@@ -1,0 +1,36 @@
+.hero-polygon{background-color: rgba(0,0,0,.9)}
+#app-portfolio-section{background-color: #111;}
+#app-footer-section{background-color: #111; border-top:5px solid #1493ee; position: fixed; bottom:0; left: 0; z-index: 999;}
+ 
+/* .app-header-section{border-bottom: 5px solid #1c8de0; display: block;} */
+
+/* body > .app-signupform-section{overflow: hidden;} */
+
+.stop-scroll{overflow: hidden !important;}
+
+html{scroll-behavior: smooth;}
+.lineThrough{text-decoration:line-through;}
+
+@media screen and (max-width:1035px){
+#app-hero-section{height: unset !important; min-height: unset !important; padding-bottom: 50px !important; background-size: 100% auto;}
+}
+
+@media screen and (max-width:780px){
+    #app-hero-section{background-size: auto 100%;}
+}
+
+/* @media screen and (max-width:450px){
+
+}
+
+@media screen and (max-width:650px){
+
+}
+
+@media screen and (max-width:450px){
+
+}
+
+@media screen and (max-width:370px){
+
+} */

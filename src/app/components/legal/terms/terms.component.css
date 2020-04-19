@@ -1,0 +1,48 @@
+#terms-section{margin-top: 55px; margin-bottom: 55px;}
+.terms-section-title{font-size: 4em; font-family: aveNext-bold; color: #a19f9f; opacity: .3;}
+.terms-subject-title{display: block; text-align: left; font-size: 1.3em; font-family: aveNext-bold, sans-serif; margin-top: 35px;}
+#terms-section ol{margin:2% 0;}
+#terms-section ol li{list-style-type: decimal; list-style-position: inside;}
+.terms-para{margin-bottom: 12px;}
+
+
+
+
+
+
+@media screen and (min-width:1241px){
+
+}
+
+@media screen and (max-width:1240px){
+
+}
+
+@media screen and (max-width:1035px){
+
+}
+
+@media screen and (max-width:780px){
+
+}
+
+@media screen and (max-width:750px){
+
+}
+
+@media screen and (max-width:680px){
+
+}
+
+@media screen and (max-width:650px){
+
+}
+
+@media screen and (max-width:450px){
+.terms-section-title{font-size: 2em;}
+
+}
+
+@media screen and (max-width:380px){
+
+}

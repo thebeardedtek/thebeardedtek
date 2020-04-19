@@ -1,0 +1,14 @@
+<div style="background-color: #FFF;">
+  <section id="app-header-section" class="app-header-section container-fluid">
+    <div class="row">
+        <article id="app-header" class="app-header"><app-header></app-header></article>
+    </div>
+</section>
+
+<router-outlet (activate)="onActivate($event)"></router-outlet>
+ <section id="app-footer-section" class="app-footer-section container-fluid relative">
+    <div class="row">
+        <article id="app-footer" class="app-footer"><app-footer></app-footer></article>
+    </div>
+</section>
+</div>

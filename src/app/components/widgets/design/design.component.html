@@ -1,0 +1,254 @@
+<section class="relative">
+
+  <section id="design-section1" class="design-section container-fluid relative design-service-blue">
+
+    <svg id="mobile-apps-svg-bg" width="1000" height="550" *ngIf="showAppBg">
+      <line [ngClass]="showAppBg ? 'animated delayNone fadeInRight duration1': ''" x1="0" y1="0" x2="600" y2="0" stroke="rgba(0,0,0,.2)"></line>
+      <line [ngClass]="showAppBg ? 'animated delayHalf fadeIn duration1': ''" x1="0" y1="0" x2="0" y2="550" stroke="rgba(0,0,0,.4)"></line>
+      <line [ngClass]="showAppBg ? 'animated delay1 fadeInLeft duration1': ''" x1="0" y1="550" x2="900" y2="550" stroke="rgba(0,0,0,.6)"></line>
+      <line [ngClass]="showAppBg ? 'animated delay1H fadeIn duration1': ''" x1="900" y1="550" x2="900" y2="500" stroke="rgba(0,0,0,.8)"></line>
+    </svg>
+
+<div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+  <article id="design-row" class="row design-row relative">
+
+  <div class="design-col design-col-desktop col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 relative service-col-flex">
+    <div class="design-service">
+      <div class="service-mobile-suptitle aveNext-bold">Why You Need My Services...</div>
+      <div class="service-mobile-div"><span class="service-mobile-title"><span class="hide-on-mobile aveNext-bold">Small Business </span> <span class="color aveNext-bold">Issues</span> You May Be Experiencing</span></div>
+
+      <div class="service-mobile-blurb">
+
+        <ul class="problems-list problems-list-desktop">
+          <li><i class="fa fa-times-circle red"></i>No Online Presence <a routerLink="/web-design" class="color">(Website/App)</a></li>
+          <li><i class="fa fa-times-circle red"></i>Not Enough People Are Visiting Your Website</li>
+          <li><i class="fa fa-times-circle red"></i>Your Visitors Are Not Converting to Clients (Sales)</li>
+          <li><i class="fa fa-times-circle red"></i>Visitors Do Not Trust What They See</li>
+          <li><i class="fa fa-times-circle red"></i>Poor Digital <a routerLink="/marketing" class="color">Marketing Plan</a> (Social Media)</li>
+        </ul>
+
+        <ul class="problems-list problems-list-mobile">
+          <li><i class="fa fa-times-circle red"></i>No Online Presence <a routerLink="/web-design" class="color">(Website/App)</a></li>
+          <li><i class="fa fa-times-circle red"></i>Not Enough Visitors</li>
+          <li><i class="fa fa-times-circle red"></i>Visitors Are Not Converting</li>
+          <li><i class="fa fa-times-circle red"></i>Visitors Lack Trust In Strangers</li>
+          <li><i class="fa fa-times-circle red"></i>Poor Digital <a routerLink="/marketing" class="color">Marketing Plan</a></li>
+        </ul>
+
+
+        <div class="hide-on-mobile"><a routerLink="/signup" class="color aveNext-demi">Become a client</a> today to receive a <strong class="aveNext-demi">FREE</strong> website analysis</div>
+
+
+      <table class="service-table service-table-desktop">
+        <tr>
+          <td>
+            <span title="iOS App Store" class="service-icon"><i class="fa fa-apple"></i></span>
+            <div class="default-line-height"><span class="service-icon-blurb" title="iOS App Store">iOS App Store</span></div>
+          </td>
+          <td>
+            <span title="Google Play (Android)" class="service-icon"><i class="fa fa-android"></i></span>
+            <div class="default-line-height"><span class="service-icon-blurb" title="Google Play (Android)">Google Play</span></div>
+          </td>
+
+          <td>
+            <span title="Wordpress" class="service-icon"><i class="fa fa-wordpress"></i></span>
+            <div class="default-line-height"><span class="service-icon-blurb" title="Wordpress">Wordpress</span></div>
+          </td>
+          <td>
+            <span title="eCommerce" class="service-icon"><i class="fa fa-shopping-basket"></i></span>
+            <div class="default-line-height"><span class="service-icon-blurb" title="eCommerce">eCommerce</span></div>
+          </td>
+
+          <td>
+            <span title="Expert UI/UX Design" class="service-icon"><i class="fa fa-users"></i></span>
+            <div class="default-line-height"><span class="service-icon-blurb" title="Expert UI/UX Design">Expert Design</span></div>
+          </td>
+        </tr>
+      </table>
+
+      <!-- <div class="service-mobile-div"><span class="service-mobile-title">iOS/Android <span class="color aveNext-bold">Apps</span></span></div> -->
+      <!-- <div class="service-mobile-blurb">Have a great <a routerLink="/demo">App</a> idea? I'll make your ideas reality by developing a robust, scalable, and secure  <span class="desktop-read-more">that works on all devices, browsers, and platforms. <span><a routerLink="/mobile-apps" class="color">More About Mobile Apps</a></span></span> -->
+
+
+      <!-- <span class="mobile-read-more">
+        <span class="expand-to-read" *ngIf="appDetails === true">native application that works on all devices, browsers, and platforms.</span><span *ngIf="!appDetails" class="read-more color" (click)="viewMore('appDetails')">expand...</span> <span *ngIf="appDetails" class="read-more color" (click)="viewMore('appDetails')">close...</span>
+      </span> -->
+
+      <button class="default-btn-color design-cta-btn" routerlink="/signup">Start Your Project</button>
+
+
+
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="design-col design-col-desktop-app-bg col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-7 relative" [ngClass]="showAppBg ? 'animated delayNone zoomIn duration1': ''" detect-scroll (onScroll)="onScrollSolutions($event)" [topOffset]="200">
+
+    <picture *ngIf="showAppBg">
+    <source class="responsive-bg-img" media="(max-width: 768px)" srcset="{{base}}/assets/solutions/app-screens400-white.webp webp400" alt="Mobile App Screens" type="image/webp">
+    <source class="responsive-bg-img" srcset="{{base}}/assets/solutions/app-screens900-white.webp"
+    alt="Mobile App Screens webp900" type="image/webp">
+
+    <img class="responsive-bg-img" src="{{base}}/assets/solutions/app-screens900-white.jpg" alt="Mobile App Screens jpg" type="image/jpeg">
+    </picture>
+
+
+
+  </div>
+
+  <div class="design-col design-col-mobile-app-bg col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-7 relative">
+
+  <picture>
+    <source class="responsive-bg-img" media="(max-width: 768px)" srcset="{{base}}/assets/solutions/app-screens400-white.webp" alt="Mobile App Screens other400 Webp" type="image/webp">
+    <source class="responsive-bg-img" srcset="{{base}}/assets/solutions/app-screens900-white.webp" alt="Mobile App Screens other900 Webp" type="image/webp">
+    <img class="responsive-bg-img" src="{{base}}/assets/solutions/app-screens900-white.jpg" alt="Mobile App Screens otherJPG" type="image/jpeg">
+  </picture>
+  </div>
+
+</article>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="design-section2" class="design-section container-fluid design-section2-desktop design-section2-desktop-padding relative">
+
+<!-- SVG LINE -->
+ <div class="relative">
+    <svg id="mobile-apps-svg-bg-alt" width="975" height="450" *ngIf="showAppBg">
+      <line [ngClass]="showAppBg ? 'animated delayNone fadeInLeft duration1 ': ''" x1="550" y1="12" x2="975" y2="12" stroke="rgba(0,0,0,.2)"></line>
+      <line [ngClass]="showAppBg ? 'animated delayFourth fadeInDown duration1': ''" x1="975" y1="12" x2="975" y2="450" stroke="rgba(0,0,0,.2)"></line>
+      <line [ngClass]="showAppBg ? 'animated delayHalf fadeInRight duration1': ''" x1="975" y1="450" x2="0" y2="450" stroke="rgba(0,0,0,.5)"></line>
+      <line [ngClass]="showAppBg ? 'animated delay1 fadeInUp duration1': ''" x1="0" y1="450" x2="0" y2="375" stroke="rgba(0,0,0,.8)"></line>
+    </svg>
+ </div>
+<!-- SVG LINE -->
+
+
+
+<article class="row">
+<div class="design-section2-col1 col col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6" [ngClass]="showResponsiveBg ? 'animated delayNone zoomIn duration1': ''">
+<div id="design-row" class="row design-row relative ">
+
+<div *ngIf="showResponsiveBg" class="design-col col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 relative design-img-desktop">
+
+  <picture>
+    <source class="responsive-bg-img" media="(max-width:768px)" srcset="{{base}}/assets/solutions/responsive-sm-400.webp" alt="Responsive Web Design Screens" type="image/webp">
+    <source class="responsive-bg-img" srcset="{{base}}/assets/solutions/responsive-sm-600.webp" alt="Responsive Web Design Screens" type="image/webp">
+    <img class="responsive-bg-img" src="{{base}}/assets/solutions/responsive-sm-600.jpg" alt="Responsive Web Design Screens" type="image/jpeg">
+  </picture>
+
+</div>
+
+<!-- <div class="design-col col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 relative design-img-mobile">
+
+<picture>
+  <source class="responsive-bg-img" media="(max-width:768px)" srcset="{{base}}/assets/solutions/responsive-sm-400.webp" alt="Responsive Web Design Screens" type="image/webp">
+  <source class="responsive-bg-img" srcset="{{base}}/assets/solutions/responsive-sm-600.webp" alt="Responsive Web Design Screens" type="image/webp">
+  <img class="responsive-bg-img" src="{{base}}/assets/solutions/responsive-sm-600.png" alt="Responsive Web Design Screens" type="image/jpeg">
+</picture>
+</div> -->
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="design-section2-col1-mobile col col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+<div id="design-row" class="row design-row relative">
+<div class="design-col design-col-desktop col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 relative">
+
+<div class="design-service design-service-web">
+
+  <div class="service-mobile-suptitle aveNext-bold">What I Can Do For You...</div>
+    <div class="service-mobile-div"><span class="service-mobile-title">Proven <span class="color aveNext-bold">Solutions</span></span></div>
+
+    <div class="service-mobile-blurb">
+      <ul class="problems-list problems-list-desktop">
+        <li><i class="fa fa-check green"></i>Custom Website/App <a routerLink="/web-design" class="color">(You Retain All Rights )</a></li>
+        <li><i class="fa fa-check green"></i>Spread The Word; Increase Visibility</li>
+        <li><i class="fa fa-check green"></i>Improve User Flow, Effective Channeling</li>
+        <li><i class="fa fa-check green"></i>Quality (over quantity) Project Management</li>
+        <li><i class="fa fa-check green"></i>Craft <a routerLink="/marketing" class="color">Marketing</a> Campaigns That Target Your Audience</li>
+      </ul>
+
+      <ul class="problems-list problems-list-mobile pl-20">
+        <li><i class="fa fa-check green"></i>Custom <a routerLink="/web-design" class="color">Website/App</a></li>
+        <li><i class="fa fa-check green"></i>Increase Visibility</li>
+        <li><i class="fa fa-check green"></i>Improve User Flow</li>
+        <li><i class="fa fa-check green"></i>Quality Project Management</li>
+        <li><i class="fa fa-check green"></i>Craft Targeted <a routerLink="/marketing" class="color">Marketing</a></li>
+      </ul>
+
+    </div>
+
+    <button class="default-btn-color design-section2-signup" routerlink="/clients">Become a Client</button>
+
+
+
+    <div class="hide-on-mobile"><a routerLink="/signup" class="color aveNext-demi">Signup</a> for a <strong class="aveNext-demi">FREE</strong> Marketing Analysis ($999 value)</div>
+
+    <div class="table-padding">
+      <table class="service-table service-table-desktop">
+        <tr>
+          <td>
+            <span title="Targeting" class="service-icon"><i class="fa fa-dot-circle-o"></i></span>
+            <div class="default-line-height"><span class="service-icon-blurb" title="Targeting">Targeting</span></div>
+          </td>
+          <td>
+            <span title="Sales" class="service-icon"><i class="fa fa-line-chart"></i></span>
+            <div class="default-line-height"><span class="service-icon-blurb" title="Sales">Increase Sales</span></div>
+          </td>
+
+          <td>
+            <span title="Project Management" class="service-icon"><i class="fa fa-wrench"></i></span>
+            <div class="default-line-height"><span class="service-icon-blurb" title="Project Management">Management</span></div>
+          </td>
+          <td>
+            <span title="Responsive Design" class="service-icon"><i class="fa fa-laptop"></i></span>
+            <div class="default-line-height"><span class="service-icon-blurb" title="Responsive Design">Responsive Design</span></div>
+          </td>
+
+          <td>
+            <span title="All Platforms and Devices" class="service-icon"><i class="fa fa-mobile"></i></span>
+            <div class="default-line-height"><span class="service-icon-blurb" title="All Platforms and Devices">All Devices</span></div>
+          </td>
+
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="design-col col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-7 relative digital-marketing-col">
+</div>
+</div>
+</div>
+
+
+</article>
+</section>
+
+</section>

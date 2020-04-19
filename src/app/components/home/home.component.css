@@ -1,0 +1,48 @@
+.app-hero-section{border-bottom: 5px solid #1c8de0; background-repeat: no-repeat; background-size: 100% auto; background-color: #000; background-position: top left; display: flex; align-items: center; align-content: center; justify-content: center; min-height:650px; max-height: 675px;}
+.hero-polygon{background-color: rgba(0,0,0,.9)}
+#contact-home-svg{position: absolute; z-index: 0; top:0; left:0;}
+.toggle-maintenance{text-align: center; padding-bottom: 50px; margin-top: -40px;}
+.contact-home-img{width: 100%; max-width: 35%; height: auto; z-index: 0; position: absolute; right: 100px; top: 200px;}
+#contact-home-svg-bg{z-index: 0; position: absolute;}
+#app-home-cta-section{margin-top: -75px;}
+.app-banner{position: absolute; top: 0;; left: 0; z-index:0; width: 100%; height: 100%;}
+#app-hero{height: 100%; display: flex; align-items: center;; align-content: center; justify-content: center;}
+.pricing-header-home{position: relative; text-align: center; font-size: 3em; line-height: 1.3em; padding-bottom: 20px; margin: 0px 6%; color: #333; display: block; width: 100%;}
+
+@media screen and (min-width:2301px){
+  .app-hero-section{min-height:1000px; max-height: 1075px;}
+}
+
+@media screen and (min-width:2001px) and (max-width:2300px){
+  .app-hero-section{min-height:850px; max-height: 875px;}
+}
+
+@media screen and (min-width:1700px) and (max-width:2000px){
+  .app-hero-section{min-height:750px; max-height: 775px;}
+}
+
+@media screen and (max-width:1175px){
+#app-solutions-panel{display: none;}
+}
+
+@media screen and (max-width:1035px){
+    #app-design-section row{display:block !important;}
+    .contact-home-img{max-width: 45%; right: 20px;}
+    .app-hero-section{min-height: 500px;}
+    #app-home-cta-section{margin-top: 30px;}
+  }
+
+@media screen and (max-width:780px){
+    .app-hero-section{background-size:  100% auto; padding-bottom:0; min-height: 450px !important; max-height: 475px !important; padding-top:50px;}
+}
+
+@media screen and (max-width:450px){
+    .app-hero-section{background-size: cover; padding-bottom:0; min-height: 340px !important; max-height: 360px !important;}
+    #app-contact-home-section{padding-left: 15px !important;}
+    #app-home-cta-section{margin-top: 30px;}
+}
+
+
+@media screen and (max-width:385px){
+    .app-hero-section{min-height: 340px; max-height: 360px !important;}
+}

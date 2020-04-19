@@ -1,0 +1,45 @@
+#banner-section-wrapper{background-color: black;}
+.banner-section .banner-block{overflow: hidden;}
+.banner-section{display: flex;}
+.banner-section img{width:100%; height: 100%;}
+.banner-block{width: calc(100%/6)}
+
+.banner-overlay{width:100%; height: 100%; background-color: rgba(0,0,0,.85); position: absolute; top: 0; left:0}
+
+
+
+@media screen and (min-width:1500px){
+
+}
+
+@media screen and (max-width:1240px){
+
+}
+
+@media screen and (max-width:1035px){
+
+}
+
+@media screen and (max-width:780px){
+
+}
+
+@media screen and (max-width:750px){
+
+}
+
+@media screen and (max-width:680px){
+
+}
+
+@media screen and (max-width:650px){
+
+}
+
+@media screen and (max-width:450px){
+
+}
+
+@media screen and (max-width:380px){
+
+}

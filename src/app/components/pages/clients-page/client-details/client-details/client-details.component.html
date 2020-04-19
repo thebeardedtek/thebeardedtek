@@ -1,0 +1,220 @@
+<form [formGroup]="clientDetailsForm" (ngSubmit)="saveClientDetailsForm()" >
+<section id="client-contacts-section" class="container-fluid pt-30">
+  <article id="client-contacts-article" class="row">
+    <div id="personal-info-div" class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <div class="pb-20">
+        <span class="f16 aveNext-demi">Contact Information</span>
+      </div>
+
+      <div class="personal-info-inputs">
+        <mat-form-field class="pr-10">
+          <input
+            matInput
+            type="text"
+            formControlName="clientFirstName"
+            class="login-input"
+            required
+            placeholder="First Name"
+            minlength="4"
+            ngClass="!isValidString() ? 'invalid' : ''"
+            [(ngModel)]="clientDetails.payload.clientFirstName">
+        </mat-form-field>
+
+        <mat-form-field class="pr-10">
+          <input
+            matInput
+            type="text"
+            formControlName="clientMiddleName"
+            class="login-input"
+            placeholder="Middle Name"
+            minlength="4"
+            [(ngModel)]="clientDetails.payload.clientMiddleName">
+        </mat-form-field>
+
+        <mat-form-field class="">
+          <input
+            matInput
+            type="text"
+            formControlName="clientLastName"
+            class="login-input"
+            placeholder="Last Name"
+            minlength="4"
+            [(ngModel)]="clientDetails.payload.clientLastName">
+        </mat-form-field>
+
+
+      </div>
+
+
+
+      <!-- <div class="pb-20 mt-20">
+        <span class="f16 aveNext-demi">Contact Information</span>
+      </div> -->
+
+      <div>
+        <mat-form-field class="mr-30 form-email">
+          <input
+            matInput
+            type="email"
+            formControlName="clientEmail"
+            class="form-email-input"
+            required
+            placeholder="Email Address"
+            minlength="4"
+            [(ngModel)]="clientDetails.payload.clientEmail">
+            <small *ngIf="emailError"  class="red">Email Address Not Available</small>
+            <span matSuffix><i class="fa fa-envelope"></i></span>
+        </mat-form-field>
+
+        <mat-form-field class="mr-30">
+          <input
+            matInput
+            type="tel"
+            formControlName="clientPhone1"
+            class="login-input"
+            placeholder="Primary Phone"
+            minlength="4"
+            [(ngModel)]="clientDetails.payload.clientPhone1">
+            <span matSuffix><i class="fa fa-phone"></i></span>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            matInput
+            type="tel"
+            formControlName="clientPhone2"
+            class="login-input"
+            placeholder="Alternate Phone"
+            minlength="4"
+            [(ngModel)]="clientDetails.payload.clientPhone2">
+            <span matSuffix><i class="fa fa-phone"></i></span>
+        </mat-form-field>
+      </div>
+
+
+      <div class="pb-20 mt-20">
+        <span class="f16 aveNext-demi">Social Media</span>
+      </div>
+
+      <section>
+          <article>
+            <mat-form-field class="pr-20">
+            <input
+              matInput
+              type="text"
+              formControlName="facebookHandle"
+              class="login-input"
+              placeholder="Facebook Handle"
+              minlength="4"
+              [(ngModel)]="clientDetails.payload.facebookHandle">
+              <span matSuffix><i class="fa fa-facebook"></i></span>
+          </mat-form-field>
+
+          <mat-slide-toggle
+            class="mr-50"
+            formControlName="enableFacebook"
+            [(ngModel)]="clientDetails.payload.enableFacebook">
+            <span *ngIf="!clientDetails.payload.enableFacebook">Disabled</span>
+            <span *ngIf="clientDetails.payload.enableFacebook">Enabled</span>
+          </mat-slide-toggle>
+
+
+
+          <mat-form-field class="pr-20">
+            <input
+              matInput
+              type="text"
+              formControlName="twitterHandle"
+              class="login-input"
+              placeholder="Twitter Handle"
+              minlength="4"
+              [(ngModel)]="clientDetails.payload.twitterHandle">
+              <span matSuffix><i class="fa fa-twitter"></i></span>
+          </mat-form-field>
+
+          <mat-slide-toggle
+            formControlName="enableTwitter"
+            [(ngModel)]="clientDetails.payload.enableTwitter">
+            <span *ngIf="!clientDetails.payload.enableTwitter">Disabled</span>
+            <span *ngIf="clientDetails.payload.enableTwitter">Enabled</span>
+          </mat-slide-toggle>
+        </article>
+
+          <article>
+            <mat-form-field class="pr-20">
+            <input
+              matInput
+              type="text"
+              formControlName="instagramHandle"
+              class="login-input"
+              placeholder="Instagram Handle"
+              minlength="4"
+              [(ngModel)]="clientDetails.payload.instagramHandle">
+              <span matSuffix><i class="fa fa-instagram"></i></span>
+          </mat-form-field>
+
+          <mat-slide-toggle
+            class="mr-50"
+            formControlName="enableInstagram"
+            [(ngModel)]="clientDetails.payload.enableInstagram">
+            <span *ngIf="!clientDetails.payload.enableInstagram">Disabled</span>
+            <span *ngIf="clientDetails.payload.enableInstagram">Enabled</span>
+          </mat-slide-toggle>
+
+
+          <mat-form-field class="pr-20">
+            <input
+              matInput
+              type="text"
+              formControlName="linkedinHandle"
+              class="login-input"
+              placeholder="LinkedIn Handle"
+              minlength="4"
+              [(ngModel)]="clientDetails.payload.linkedinHandle">
+              <span matSuffix><i class="fa fa-linkedin"></i></span>
+          </mat-form-field>
+
+          <mat-slide-toggle
+            formControlName="enableLinkedin"
+            [(ngModel)]="clientDetails.payload.enableLinkedin">
+            <span *ngIf="!clientDetails.payload.enableLinkedin">Disabled</span>
+            <span *ngIf="clientDetails.payload.enableLinkedin">Enabled</span>
+          </mat-slide-toggle>
+          </article>
+      </section>
+    </div>
+
+    <!-- <div id="submit-div" class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <mat-divider class="mt-10 mb-10"></mat-divider>
+    </div> -->
+
+
+
+
+
+  </article>
+</section>
+
+<div id="submit-div" class="mt-40">
+    <div class="text-right client-details-save">
+
+      <button
+        type="submit"
+        [disabled]="!clientDetailsForm.dirty || clientDetailsForm.invalid"
+        [ngClass]="!clientDetailsForm.dirty ? 'disabled' : ''"
+        class="login-button">
+          <span>Save Form</span>
+      </button>
+
+      <button
+        type="reset"
+        [disabled]="!clientDetailsForm.dirty"
+        [ngClass]="!clientDetailsForm.dirty ? 'disabled' : ''"
+        (click)="resetForm()"
+        class="reset-button">
+          <span>Reset Form</span>
+        </button>
+    </div>
+  </div>
+
+</form>

@@ -1,0 +1,209 @@
+<section class="login-modal modal-section">
+  <article *ngIf="!checkLoginStatus()"  class="modal-article">
+     <div class="modal-div">
+
+       <div *ngIf="forgotPasswordSent">
+         We're sorry you're unable to login. Please check your email for a reset link. Or <a href="mailto:thebeardedtek@gmail.com" class="color">email</a> support for additional assistance. <span class="color close-box" (click)="closeLoginModal()" >Close this box</span>.
+       </div>
+
+        <form *ngIf="!forgotPasswordSent" [formGroup]="headerLogin" (ngSubmit)="processHeaderLogin()" >
+
+          <div class="login-header aveNext-demi">
+            <span *ngIf="!registerUser">Sign in</span>
+            <span *ngIf="registerUser">Register</span>
+            <!-- <span class="float-right exit-modal" (click)="closeLoginModal()"><i class="fa fa-times"></i></span> -->
+          </div>
+
+        <mat-form-field appearance="legacy">
+          <mat-label>Email Address</mat-label>
+          <input
+          matInput
+          type="email"
+          formControlName="clientEmail"
+          class="login-input"
+          required
+          (keydown.space)="$event.preventDefault();"
+          (change)="setDirty()"
+          [ngClass]="isValidEmail(headerLogin.controls['clientEmail']) ? '' : 'invalid ng-invalid'"
+          placeholder="Your Email"
+          minlength="4"
+          maxlength="30">
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-hint>ex. email@email.com <span *ngIf="registerUser" >max 30 characters</span></mat-hint>
+          </mat-form-field>
+
+          <mat-form-field
+          *ngIf="!forgotEmail">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            formControlName="clientPassword"
+            class="login-input"
+            minlength="8"
+            maxlength="20"
+            required
+            (keydown.space)="$event.preventDefault();"
+            (change)="setDirty()"
+            placeholder="Your Password"
+            >
+          <mat-icon matSuffix>lock</mat-icon>
+          <mat-hint *ngIf="registerUser" >Must be 8-20 characters and include one of each; number, letter, and special character</mat-hint>
+          <mat-hint *ngIf="loginErrorsArray && loginErrorsArray.length > 0">
+            <div class="red errors" *ngFor="let error of loginErrorsArray">{{error}}</div>
+          </mat-hint>
+          </mat-form-field>
+
+
+
+          <div class="text-right" *ngIf="forgotEmail">
+          <button
+            (click)="processForgotPassword()"
+            [disabled]="!headerLogin.dirty"
+            class="btn default-btn-color login-button">
+              Reset Password
+          </button>
+          </div>
+
+
+          <div class="recover-password text-right" [ngClass]="registerUser || loginErrorsArray ? 'mt-20' : ''" >
+            <small *ngIf="!forgotEmail">
+              <a class="hover" (click)="toggleForgotPassword()" >Forgot Password</a>
+            </small>
+
+            <small *ngIf="forgotEmail">
+              <a class="hover" (click)="toggleForgotPassword()" >Back To Sign In</a>
+            </small>
+          </div>
+
+
+          <div class="text-center" *ngIf="!forgotEmail">
+            <button
+            *ngIf="!registerUser"
+            [disabled]="!headerLogin.dirty || headerLogin.invalid"
+            class="btn default-btn-color login-button"
+            (click)="processHeaderLogin()"
+            [ngClass]="!headerLogin.dirty || headerLogin.invalid ? 'no-hover': ''" >
+            Sign in with email
+            </button>
+
+            <button
+            *ngIf="registerUser"
+            [disabled]="!headerLogin.dirty || headerLogin.invalid"
+            class="btn default-btn-color login-button"
+            (click)="processHeaderRegistration()"
+            [ngClass]="!headerLogin.dirty || headerLogin.invalid ? 'no-hover': ''" >
+            Register with email
+            </button>
+
+          </div>
+
+          <!-- <div class="text-center signin-with">
+            <small>or <span *ngIf="!registerUser" >Sign in</span> <span *ngIf="registerUser" >Register</span> with</small>
+          </div> -->
+
+          <!-- <div class="flex-container signin-icons">
+            <div (click)="signInWithGoogle()" >
+              Google
+              <i class="fa fa-google"></i>
+            </div>
+          </div> -->
+          <hr>
+
+          <div class="text-right">
+            <button
+              *ngIf="!registerUser"
+              (click)="toggleRegister()"
+              class="btn register-button">
+              <small>Not a member? <span class="color">Sign Up</span></small>
+          </button>
+
+          <button
+            *ngIf="registerUser"
+            (click)="toggleRegister()"
+            class="btn register-button">
+            <small>Back To <span class="color">Sign In</span></small>
+          </button>
+          </div>
+        </form>
+     </div>
+  </article>
+
+  <article *ngIf="checkLoginStatus()" id="main-sidebar-article" class="main-sidebar-article row">
+    <div id="main-sidebar-col" class="main-sidebar-col col col-xs-12 col col-sm-12 col col-md-12 col col-lg-12 col col-xl-12">
+
+        <mat-card *ngIf="currentUser"
+        id="side-bar-bg"
+        class="side-bar-bg client-card"
+        >
+
+          <div
+          id="client-img-div"
+          class="relative client-img-div">
+            <picture
+            *ngIf="currentUser.clientAvatar">
+              <img
+                id="client-img"
+                class="client-img"
+                *ngIf="currentUser.clientAvatar"
+                [src]="'./../../../../assets/documents/profiles/' + currentUser.clientAvatar"
+                alt="Client Avatar">
+            </picture>
+
+            <picture *ngIf="!currentUser.clientAvatar" class="avatar">
+            <source srcset="'./../../../../assets/documents/profiles/default-avatar.webp'" type="image/webp" alt="Client Avatar">
+            <img [src]="'./../../../../assets/documents/profiles/default-avatar.png'" alt="Client Avatar">
+          </picture>
+          </div>
+
+          <mat-card-title
+          id="client-title"
+          class="client-title"
+          *ngIf="currentUser.clientLastName" >
+            {{currentUser.clientFirstName}} {{currentUser.clientLastName}}
+          </mat-card-title>
+
+          <mat-card-subtitle
+          id="client-email"
+          class="client-email"
+          *ngIf="currentUser.clientEmail" >
+          <span>E: </span>
+            {{currentUser.clientEmail}}
+          </mat-card-subtitle>
+
+          <mat-card-content
+          id="client-bio"
+          class="client-bio"
+          *ngIf="currentUser.clientBio" >
+            <small>{{currentUser.clientBio}}</small>
+          </mat-card-content>
+
+          <mat-card-actions
+          id="edit-profile-btn"
+          class="edit-profile-btn">
+            <button
+            routerLink="/clients"
+            class="btn default-btn-color">
+            Edit Profile
+            </button>
+
+            <button
+            (click)="logout()"
+            class="btn default-btn-black">
+            Logout
+            </button>
+
+          </mat-card-actions>
+
+
+          <mat-card-actions
+          id="client-social-links"
+          class="client-social-links">
+            <a *ngIf="currentUser.facebookHandle"  class="btn btn-clear" href="https://facebook.com/{{currentUser.facebookHandle}}" target="_blank" title="{{currentUser.facebookHandle}}"><i class="fa fa-facebook"></i></a>
+            <a *ngIf="currentUser.instagramHandle"  class="btn btn-clear" href="https://instagram.com/{{currentUser.instagramHandle}}" target="_blank" title="{{currentUser.instagramHandle}}"><i class="fa fa-instagram"></i></a>
+            <a *ngIf="currentUser.linkedinHandle"  class="btn btn-clear" href="https://linkedin.com/company/{{currentUser.linkedinHandle}}" target="_blank" title="{{currentUser.linkedinHandle}}"><i class="fa fa-linkedin"></i></a>
+          </mat-card-actions>
+      </mat-card>
+  </div>
+</article>
+</section>

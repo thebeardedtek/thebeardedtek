@@ -1,0 +1,50 @@
+.pricing-table{font-family: aveNext-reg, sans-serif;}
+.pricing-table{border:1px solid rgba(200,200,200,.4);}
+.pricing-table th, .pricing-table td{text-align: center; vertical-align: middle; border:1px solid rgba(200,200,200,.4);}
+.pricing-table th{background-color: #f4f6f8; padding-top:25px; padding-bottom: 25px;}
+.pricing-table td{padding-top:15px; padding-bottom:15px; font-family: aveNext-reg, sans-serif;}
+.pricing-table thead{font-size: 1.1em; color:rgba(51,51,51,.9); text-align: center;}
+.pricing-table-row{justify-content: center; align-content: center;}
+.features-title{text-transform: uppercase;}
+.gray-row{background-color: #f4f6f8;}
+.pricing-number{font-family: aveNext-bold, sans-serif; font-size: 2.5em; line-height: 1em;}
+.pricing-number-flat{font-size: 1.5em;}
+.pricing-number sup{font-size: .5em;}
+
+
+
+@media screen and (min-width:1241px){
+
+}
+
+@media screen and (max-width:1240px){
+
+}
+
+@media screen and (max-width:1035px){
+
+}
+
+@media screen and (max-width:780px){
+
+}
+
+@media screen and (max-width:750px){
+
+}
+
+@media screen and (max-width:680px){
+
+}
+
+@media screen and (max-width:650px){
+
+}
+
+@media screen and (max-width:450px){
+
+}
+
+@media screen and (max-width:380px){
+
+}

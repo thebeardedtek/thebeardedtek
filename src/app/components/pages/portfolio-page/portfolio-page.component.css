@@ -1,0 +1,60 @@
+#portfolio-section-page{margin-top: 25px; margin-bottom: 25px;}
+#portfolio-section{margin-top: 15px; margin-bottom: 15px;}
+
+.portfolio-section-page-row{padding-left:2%; padding-right:2%;}
+.portfolio-section-title{font-size: 4em; font-family: aveNext-bold; color: #a19f9f; opacity: .3; text-align: center;}
+/* .portfolio-col{display: flex; align-content: center; align-items: center; justify-content: center;} */
+.portfolio-nav{margin-bottom: 50px;}
+.portfolio-nav2{margin-top: 50px; margin-bottom: unset;}
+.portfolio-nav li{list-style-type: none;  text-align: center; font-size: 1em;display: inline-block; margin-right: 20px;}
+.portfolio-nav li:hover{cursor: pointer;}
+.portfolio-nav li a:hover, .portfolio-nav li a.active {color: #3d9fe9 !important;}
+/* .portfolio-col2{background-color: #111;} */
+.portfolio-section-desktop{text-align:center;}
+.portfolio-section-desktop img{width: 100%; height: auto;}
+.portfolio-section-desktop .col{padding-bottom: 30px; flex-basis: unset;}
+.search-icon{padding-right: 8px;}
+.reset-portfolio-query{margin-right: 15px;}
+.webapp-filter{margin-right: 10px;}
+#portfolio-sidebar-section{margin-bottom: 30px;}
+.portfolio-input{width:100%;}
+.mat-card-title{font-size: 1.2em; clear: both;}
+.mat-card-title::after{content: ''; display: table;}
+.filter-by-cat-title div{float:left; border:1px solid rgba(51,51,51,.4); padding:5px 8px;}
+.filter-by-cat-title span{border:1px solid rgba(51,51,51,.4); padding:5px 8px;}
+.filter-by-cat-title i{color:rgba(51,51,51,.7)}
+.client-title{font-size:1.2em;}
+.active-category{background-color: #1c8de0 !important; color:#FFF !important; border:1px solid #1c8de0 !important;}
+.active-category i{color: #FFF !important;}
+.recent-items img{width:100%; border:2px solid #FFF;}
+
+
+
+@media screen and (max-width:1035px){
+
+}
+
+@media screen and (max-width:780px){
+.mobile-padding-fix{padding-top:35px !important;}
+}
+
+@media screen and (max-width:750px){
+
+}
+
+@media screen and (max-width:680px){
+
+}
+
+@media screen and (max-width:650px){
+
+}
+
+@media screen and (max-width:450px){
+.portfolio-section-title{font-size:3em;}
+.portfolio-section-desktop img{width: 80%; height: auto;}
+}
+
+@media screen and (max-width:380px){
+
+}

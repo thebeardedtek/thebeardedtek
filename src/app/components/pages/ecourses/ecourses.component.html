@@ -1,0 +1,745 @@
+
+
+<div id="app-social" class="app-social"><app-social></app-social></div>
+
+<section id="page-template-section" class="page-template-section relative container-fluid">
+  <article id="page-template-article" class="page-template-article row">
+    <div id="page-template-col" class="page-template-col col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+      <picture class="page-template-header-img">
+        <source srcset="./../../../../assets/ecourses/ecourses.webp" type="image/webp" alt="eCourses">
+        <img src="./../../../../assets/ecourses/ecourses.jpg" alt="eCourses" type="image/jpeg">
+      </picture>
+
+      <div id="page-template-page-header" class="page-template-page-header">
+
+        <div class="page-header-wrapper">
+
+          <div class="page-header-title aveNext-bold">
+          All <span class="color aveNext-bold">eCourses</span>
+          </div>
+
+          <div class="page-header-subtitle aveNext-reg">
+            View The Full <span class="color aveNext-bold">Course Outline</span> and description.
+          </div>
+
+          <div class="page-header-cta">
+            <button class="btn default-btn" routerLink="/getting-started">
+              <span class="aveNext-reg">Start Learning</span>
+            </button>
+
+            <button class="btn default-btn-color" routerLink="/syllabus">
+              <span class="aveNext-reg">Course Syllabus</span>
+            </button>
+          </div>
+
+          <div class="page-header-disclosure aveNext-reg">
+            *Intermediate and Advanced courses offered at low cost
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </article>
+</section>
+<div class="section-divider"></div>
+
+<section id="page-template-content-section" class="page-template-content-section container-fluid">
+
+<article id="page-template-content-row" class="page-template-content-row row">
+
+<!-- BEGINS THE LEFT ASIDE -->
+<aside id="page-template-body-aside" class="page-template-body-aside col col-xs-3 col-sm-3 col-md-5 col-lg-3 col-xl-3">
+    <!--<app-main-sidebar class="hide-on-mobile"></app-main-sidebar>-->
+    <app-courses-sidebar class="hide-on-mobile"></app-courses-sidebar>
+</aside>
+<!-- ENDS THE LEFT ASIDE -->
+
+
+<!-- BEGINS THE RIGHT MAIN BODY -->
+<div id="page-template-body-main" class="page-template-body-main col col-xs-12 col-sm-12 col-md-7 col-lg-9 col-xl-9">
+
+
+
+<section id="page-template-body-header" class="page-template-body-header container-fluid">
+  <article class="row">
+  <div id="page-template-title-col" class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 page-template-title-col">
+    <span class="page-template-body-title aveNext-demi">Intro To <span class="color aveNext-demi">Web Development</span></span>
+  </div>
+</article>
+</section>
+
+<section id="page-body-section" class="page-body-section container-fluid">
+  <article id="page-body-article" class="page-body-article row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <ng-container *ngFor="let course of allCourses">
+      <div *ngIf="allCourses && allCourses.length > 0 && course.category === 'WEB_DEVELOPMENT'" class="header-subtitle aveNext-reg ecourses" >
+
+      
+        <details>
+          <summary>
+            <span title="{{course.courseName}}" class="gray">{{course.courseName}}</span>
+          </summary>
+
+          <div>
+            <div class="pt-10 pb-10">
+              <span class="aveNext-bold">Course Description:</span> {{course.description}}
+            </div>
+            <small><a routerLink="/{{course.courseLink}}" class="color">Start Course</a></small>
+            <small><a href="{{course.youTube}}" target="_blank" class="color">Watch On YouTube</a></small>
+
+            <div class="fb-like" 
+              data-href="https://thebeardedtek.com" 
+              data-layout="standard" 
+              data-action="like" 
+              data-show-faces="true">
+            </div>
+          </div>
+        </details>
+      </div>
+    </ng-container>
+  </div>
+  </article>
+</section>
+
+
+
+<section id="page-template-body-header" class="page-template-body-header container-fluid">
+  <article class="row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <span class="page-template-body-title aveNext-demi">Setting Up Your <span class="color aveNext-demi"> Development Environment</span></span>
+  </div>
+</article>
+</section>
+
+<section id="page-body-section" class="page-body-section container-fluid">
+  <article id="page-body-article" class="page-body-article row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="header-subtitle aveNext-reg ecourses">
+      <details>
+        <summary>
+          <span class="gray">Development Environment</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">Selecting an IDE</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">Choosing a Browser</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">Developer Tools (console)</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">Using JSFiddle.net</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+    </div>
+  </div>
+  </article>
+</section>
+
+
+<section id="page-template-body-header" class="page-template-body-header container-fluid">
+  <article class="row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <span class="page-template-body-title aveNext-demi">HTML <span class="color aveNext-demi">Fundamentals</span></span>
+  </div>
+</article>
+</section>
+
+<section id="page-body-section" class="page-body-section container-fluid">
+  <article id="page-body-article" class="page-body-article row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="header-subtitle aveNext-reg ecourses">
+      <details>
+        <summary>
+          <span class="gray">HTML Document Structure</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">HTML Structural Elements</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">HTML Element Attributes</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">HTML Nesting Tags</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+    </div>
+  </div>
+  </article>
+</section>
+
+
+
+<section id="page-template-body-header" class="page-template-body-header container-fluid">
+  <article class="row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <span class="page-template-body-title aveNext-demi">CSS <span class="color aveNext-demi">Fundamentals</span></span>
+  </div>
+</article>
+</section>
+
+<section id="page-body-section" class="page-body-section container-fluid">
+  <article id="page-body-article" class="page-body-article row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="header-subtitle aveNext-reg ecourses">
+      <details>
+        <summary>
+          <span class="gray">CSS In-line vs. In-Page vs. External</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">CSS Targeting Elements</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">CSS Targeting Classes</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">CSS Targeting IDs</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+    </div>
+  </div>
+  </article>
+</section>
+
+
+
+<section id="page-template-body-header" class="page-template-body-header container-fluid">
+  <article class="row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <span class="page-template-body-title aveNext-demi">Working with <span class="color aveNext-demi">Text</span></span>
+  </div>
+</article>
+</section>
+
+<section id="page-body-section" class="page-body-section container-fluid">
+  <article id="page-body-article" class="page-body-article row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="header-subtitle aveNext-reg ecourses">
+      <details>
+        <summary>
+          <span class="gray">HTML Header Tags</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">Paragraph Tags</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">CSS Intro to Font Properties</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">CSS Intro to Text Transformations</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+    </div>
+  </div>
+  </article>
+</section>
+
+
+
+<section id="page-template-body-header" class="page-template-body-header container-fluid">
+  <article class="row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <span class="page-template-body-title aveNext-demi">CSS <span class="color aveNext-demi">Background</span> Properties</span>
+  </div>
+</article>
+</section>
+
+<section id="page-body-section" class="page-body-section container-fluid">
+  <article id="page-body-article" class="page-body-article row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="header-subtitle aveNext-reg ecourses">
+      <details>
+        <summary>
+          <span class="gray">CSS Intro to Background Properties</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">Configuring Background Images</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">CSS Gradients</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+    </div>
+  </div>
+  </article>
+</section>
+
+
+
+<section id="page-template-body-header" class="page-template-body-header container-fluid">
+  <article class="row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <span class="page-template-body-title aveNext-demi">Working With <span class="color aveNext-demi">Links</span></span>
+  </div>
+</article>
+</section>
+
+<section id="page-body-section" class="page-body-section container-fluid">
+  <article id="page-body-article" class="page-body-article row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="header-subtitle aveNext-reg ecourses">
+      <details>
+        <summary>
+          <span class="gray">Creating HTML Hyperlinks</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">HTML Link Targets</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">Using “tel” and “mailto”</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">Styling HTML Hyperlinks</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+    </div>
+  </div>
+  </article>
+</section>
+
+
+
+<section id="page-template-body-header" class="page-template-body-header container-fluid">
+  <article class="row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <span class="page-template-body-title aveNext-demi">Build a <span class="color aveNext-demi">Nav Bar</span></span>
+  </div>
+</article>
+</section>
+
+<section id="page-body-section" class="page-body-section container-fluid">
+  <article id="page-body-article" class="page-body-article row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="header-subtitle aveNext-reg ecourses">
+      <details>
+        <summary>
+          <span class="gray">HTML Lists</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">Styling HTML Lists</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">HTML Nav Tag</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">Styling HTML Nav Bar</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+    </div>
+  </div>
+  </article>
+</section>
+
+
+
+<section id="page-template-body-header" class="page-template-body-header container-fluid">
+  <article class="row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <span class="page-template-body-title aveNext-demi">Structuring Text With <span class="color aveNext-demi">Tables</span></span>
+  </div>
+</article>
+</section>
+
+<section id="page-body-section" class="page-body-section container-fluid">
+  <article id="page-body-article" class="page-body-article row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="header-subtitle aveNext-reg ecourses">
+      <details>
+        <summary>
+          <span class="gray">HTML Intro to Tables</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">HTML Style Table Header and Footer</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+
+      <details>
+        <summary>
+          <span class="gray">Intro to CSS Grids</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+    </div>
+  </div>
+  </article>
+</section>
+
+
+
+<section id="page-template-body-header" class="page-template-body-header container-fluid">
+  <article class="row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <span class="page-template-body-title aveNext-demi">Building HTML <span class="color aveNext-demi">Forms</span></span>
+  </div>
+</article>
+</section>
+
+<section id="page-body-section" class="page-body-section container-fluid">
+  <article id="page-body-article" class="page-body-article row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="header-subtitle aveNext-reg ecourses">
+
+      <details>
+        <summary>
+          <span class="gray">HTML Intro to Forms</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+
+      <details>
+        <summary>
+          <span class="gray">HTML Input Types</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+
+      <details>
+        <summary>
+          <span class="gray">HTML Creating a Form Dropdown</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+
+      <details>
+        <summary>
+          <span class="gray">HTML Buttons</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">CSS Styling Forms</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+      </details>
+    </div>
+  </div>
+  </article>
+</section>
+
+
+
+<section id="page-template-body-header" class="page-template-body-header container-fluid">
+  <article class="row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <span class="page-template-body-title aveNext-demi">Working with <span class="color aveNext-demi">Media</span></span>
+  </div>
+</article>
+</section>
+
+<section id="page-body-section" class="page-body-section container-fluid">
+  <article id="page-body-article" class="page-body-article row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="header-subtitle aveNext-reg ecourses">
+      <details>
+        <summary>
+          <span class="gray">HTML Img Element</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">Styling Images</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">HTML Picture Element</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">HTML Figure/Figcaption Elements</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">HTML Title, Alt, and Rel attributes</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">HTML Audio Tag</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">HTML Video Tag</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+    </div>
+  </div>
+  </article>
+</section>
+
+
+
+<section id="page-template-body-header" class="page-template-body-header container-fluid">
+  <article class="row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <span class="page-template-body-title aveNext-demi">HTML <span class="color aveNext-demi">Extras</span></span>
+  </div>
+</article>
+</section>
+
+<section id="page-body-section" class="page-body-section container-fluid">
+  <article id="page-body-article" class="page-body-article row">
+  <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class="header-subtitle aveNext-reg ecourses">
+      <details>
+        <summary>
+          <span class="gray">HTML Metadata</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">Including CSS Style Sheets</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">Including JavaScript Scripts</span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+      <details>
+        <summary>
+          <span class="gray">Deferring Scripts in HTML </span>
+        </summary>
+        <small><a href="#" class="color">Course Documents</a></small>
+        <small><a href="#" class="color">Code Sample</a></small>
+        <small><a href="#" class="color">Resource Link</a></small>
+        <small><a href="#" class="color">Register</a></small>
+      </details>
+    </div>
+  </div>
+  </article>
+</section>
+
+
+</div>
+<!-- THIS ENDS THE RIGHT MAIN BODY -->
+</article>
+
+</section>

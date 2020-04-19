@@ -1,0 +1,42 @@
+.contact-form-table{width:100%;}
+.contact-form-table input, .contact-form-table textarea{width: 100%; overflow: hidden;}
+.full-width{width: 100%;}
+.thank-you{padding-bottom: 30px;}
+.mat-hint{width: 100%; text-align: right;}
+
+
+@media screen and (min-width:1241px){
+
+}
+
+@media screen and (max-width:1240px){
+
+}
+
+@media screen and (max-width:1035px){
+
+}
+
+@media screen and (max-width:780px){
+
+}
+
+@media screen and (max-width:750px){
+
+}
+
+@media screen and (max-width:680px){
+
+}
+
+@media screen and (max-width:650px){
+
+}
+
+@media screen and (max-width:450px){
+
+}
+
+@media screen and (max-width:380px){
+
+}

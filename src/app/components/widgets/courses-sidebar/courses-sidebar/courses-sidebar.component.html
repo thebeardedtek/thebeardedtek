@@ -1,0 +1,58 @@
+<section id="main-sidebar-section" class="main-sidebar-section container-fluid">
+  <article id="main-side-bar-courses" class="main-sidebar-article main-side-bar-courses row">
+    <div class="main-sidebar-col col col-xs-12 col col-sm-12 col col-md-12 col col-lg-12 col col-xl-12">
+
+      <mat-card>
+        <div class="courses-header">Featured Courses</div>
+        <ng-container *ngFor="let course of allCourses">
+        <div *ngIf="course.isEnabled && course.featured" class="course-flex">
+          <!-- <div class="course-img">
+            <picture>
+              <source src="./../../../../../assets/ecourses/thumbnails/{{course.thumbnail_webp}}" type="image/webp" alt="Documents">
+              <img src="./../../../../../assets/ecourses/thumbnails/{{course.thumbnail_jpg}}" alt="Documents">
+            </picture>
+          </div> -->
+          <div>
+            <span class="course-title aveNext-demi">{{course.courseName}}</span>
+
+            <div>
+              <span class="course-desc">{{course.description | slice:0:80}}...<a href="{{course.courseLink}}" class="color">Start Course</a></span>
+            </div>
+  
+              <div class="mt-10">
+                <span *ngFor="let tag of course.tags" class="pr-10">
+                  <span class="course-status in-progress pr-10 pl-10">{{tag}}</span>
+                </span>
+              </div>
+
+          </div>
+
+          
+        </div>
+        </ng-container>
+        <!-- <div class="course-flex">
+          <div class="course-img"></div>
+          <div>
+            <span class="course-title">JS: Prototypes</span>
+            <div><span class="course-status suggested">Suggested Course</span></div>
+        </div>
+        </div>
+
+        <div class="course-flex">
+          <div class="course-img"></div>
+          <div>
+            <span class="course-title">Python: Principles</span>
+            <div><span class="course-status recently-completed">Recently Completed</span></div>
+        </div>
+        </div> -->
+
+        <div class="text-center">
+          <button class="btn default-btn-color" routerLink="/ecourses">
+          <span class="aveNext-reg">View All Courses</span>
+        </button>
+        </div>
+
+      </mat-card>
+    </div>
+  </article>
+</section>

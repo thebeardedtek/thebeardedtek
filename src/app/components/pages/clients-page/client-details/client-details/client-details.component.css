@@ -1,0 +1,46 @@
+/* .social-media-wrapper{background-color: #1c8de0; color:#FFF} */
+.personal-info-inputs{display: flex;}
+.personal-info-inputs .mat-form-field{width:calc(100%/3);}
+
+.login-button,.reset-button{padding:12px 0;}
+.login-button:hover,.reset-button:hover{cursor: pointer;}
+.login-button{width: 75%; background-color:#1c8de0; color:#FFF;}
+.reset-button{width:25%; background-color: gray; color:#FFF}
+.client-details-save{display: flex;}
+#submit-div{width:100%}
+.disabled{opacity: .75; cursor: not-allowed !important;}
+@media screen and (min-width:1241px){
+
+}
+
+@media screen and (max-width:1240px){
+
+}
+
+@media screen and (max-width:1035px){
+
+}
+
+@media screen and (max-width:780px){
+
+}
+
+@media screen and (max-width:750px){
+
+}
+
+@media screen and (max-width:680px){
+
+}
+
+@media screen and (max-width:650px){
+
+}
+
+@media screen and (max-width:450px){
+
+}
+
+@media screen and (max-width:380px){
+
+}

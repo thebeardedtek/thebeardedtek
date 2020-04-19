@@ -1,0 +1,25 @@
+<div id="app-social" class="app-social"><app-social></app-social></div>
+
+<app-pricing-header></app-pricing-header>
+<app-pricing-widget id="pricing-widget-mobile"></app-pricing-widget>
+
+<div id="no-plan-desktop" class="text-center mb-30 hide-on-mobile">
+  <button
+  type="button"
+  (click)="selectPlan('trial')"
+  id="select-app-plan"
+  class="select-app-plan btn default-btn-color shadow"
+  >
+  <span>Signup Without a Plan</span>
+</button>
+</div>
+
+<div id="pricing-widget-desktop" class="pricing-table-wrapper"><app-pricing-table></app-pricing-table></div>
+
+<div class="text-center hide-on-mobile"><small><a routerLink="/" class="color">thebeardedtek</a> collects sales taxes in states where it is <a routerLink="/terms" class="color">required by law</a>. Stated prices do not include these taxes.</small></div>
+
+<div class="mt-50 mb-50 pt-20 pb-20 pricing-cta"><app-pricing-cta></app-pricing-cta></div>
+
+<div class="mt-60 mb-50 hide-on-mobile">
+  <app-pricing-table-questions id="pricing-table-questions"></app-pricing-table-questions>
+</div>

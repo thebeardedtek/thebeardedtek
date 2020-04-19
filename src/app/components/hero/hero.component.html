@@ -1,0 +1,34 @@
+<section id="hero-section" class="container-fluid relative">
+<div class="hero-col col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+<div class="row hero-row">
+<div class="hero-title-col col col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+<div class="flex-container hero-flex-container relative">
+    <div id="mobile-title" class="mobile-title">
+      <span class="aveNext-ul">The</span> <span class="aveNext-bold">Bearded</span> <span class="aveNext-demi color">Tek</span>
+    </div>
+
+    <div class="hero-title-alt aveNext-demi">mobile apps, <span class="color aveNext-demi">websites</span>, and<span class="color aveNext-demi"> digital marketing</span>
+      <span class="hero-subtitle-alt aveNext-reg">Search Engine Marketing/Optimization<span class="p-10">|</span> Photography <span class="p-10">|</span> Graphic Design <span class="p-10">|</span> Videography <span class="p-10"></span></span>
+    </div>
+
+
+    <div class="hero-cta-buttons">
+      <button *ngIf="checkLoginStatus()"  class="btn default-btn cta-buttons" routerLink="/clients">
+        <span class="aveNext-reg">manage account</span>
+      </button>
+
+      <button *ngIf="!checkLoginStatus()"  class="btn default-btn cta-buttons" routerLink="/signup">
+        <span class="aveNext-reg">become a client</span>
+      </button>
+
+
+      <button class="btn default-btn-color cta-buttons" routerLink="/pricing">
+        <span class="aveNext-reg">view pricing</span>
+      </button>
+
+    </div>
+</div>
+</div>
+</div>
+</div>
+</section>
