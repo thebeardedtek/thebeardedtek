@@ -77,6 +77,9 @@ import { GoogleAnalyticsService } from './services/google-analytics/google-analy
 import { WhatIsHtmlComponent } from './components/pages/courses/html/what-is-html/what-is-html.component';
 import { AppGuard } from './app.guard';
 import { E404Component } from './components/pages/error/e404/e404.component';
+import { FitnessComponent } from './components/pages/landing/fitness/fitness/fitness.component';
+import { EducationComponent } from './components/pages/landing/education/education/education.component';
+import { CleaningComponent } from './components/pages/landing/cleaning/cleaning/cleaning.component';
 export function tokenGetter() {
   return localStorage.getItem('access_token');
 }
@@ -123,7 +126,7 @@ const jwtConfig = {
 @NgModule({
   declarations: [
     // tslint:disable-next-line: max-line-length
-    AppComponent, HeroComponent, PortfolioComponent, HeaderComponent, FooterComponent, PortfolioCtaComponent, SectionHeaderComponent, HomeComponent, SolutionsPageComponent, PricingWidgetComponent, PrivacyComponent, MarketingComponent, PageHeaderComponent, TermsComponent, DesignComponent, PricingPageComponent, PortfolioPageComponent, PageHeroComponent, MaintenanceWidgetComponent, SecurityComponent, ClientsPageComponent, MaintenanceComponent, SecurityCtaComponent, WebDesignPageComponent, MobileAppsPageComponent, DemoComponent, PromoComponent, ContactComponent, ContactWidgetComponent, ContactHomeComponent, LearningComponent, GettingStartedComponent, SyllabusComponent, EcoursesComponent, DocumentsComponent, SocialComponent, HomeCtaComponent, MainSidebarComponent, ClientDetailsComponent, ClientCoursesComponent, ClientProfileComponent, ClientSecurityComponent, ClientPreferencesComponent, ClientInboxComponent, CoursesSidebarComponent, LoginModalComponent, BannerComponent, PricingHeaderComponent, PricingTableComponent, PricingTableQuestionsComponent, PricingCtaComponent, SignupComponent, ClientLogosComponent, ClientTestimonialsComponent, SolutionsCtaComponent, SpinnerComponent, ClientBillingComponent, ClientProjectsComponent, TalentedComponent, WhatIsHtmlComponent, E404Component
+    AppComponent, HeroComponent, PortfolioComponent, HeaderComponent, FooterComponent, PortfolioCtaComponent, SectionHeaderComponent, HomeComponent, SolutionsPageComponent, PricingWidgetComponent, PrivacyComponent, MarketingComponent, PageHeaderComponent, TermsComponent, DesignComponent, PricingPageComponent, PortfolioPageComponent, PageHeroComponent, MaintenanceWidgetComponent, SecurityComponent, ClientsPageComponent, MaintenanceComponent, SecurityCtaComponent, WebDesignPageComponent, MobileAppsPageComponent, DemoComponent, PromoComponent, ContactComponent, ContactWidgetComponent, ContactHomeComponent, LearningComponent, GettingStartedComponent, SyllabusComponent, EcoursesComponent, DocumentsComponent, SocialComponent, HomeCtaComponent, MainSidebarComponent, ClientDetailsComponent, ClientCoursesComponent, ClientProfileComponent, ClientSecurityComponent, ClientPreferencesComponent, ClientInboxComponent, CoursesSidebarComponent, LoginModalComponent, BannerComponent, PricingHeaderComponent, PricingTableComponent, PricingTableQuestionsComponent, PricingCtaComponent, SignupComponent, ClientLogosComponent, ClientTestimonialsComponent, SolutionsCtaComponent, SpinnerComponent, ClientBillingComponent, ClientProjectsComponent, TalentedComponent, WhatIsHtmlComponent, E404Component, FitnessComponent, EducationComponent, CleaningComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

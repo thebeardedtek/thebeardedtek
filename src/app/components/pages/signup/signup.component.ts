@@ -108,11 +108,6 @@ planForm = new FormGroup({
     this.plan = this.route.paramMap.subscribe((item: any) => {
       if (item) {
         this.activePlan = item.params.plan || `core`;
-        this.activePlan = item.params.plan || `core`;
-
-
-        console.log('this.activePlan', this.activePlan);
-
         this.planForm.value['plan'] = this.activePlan;
         console.log('plan', this.planForm.value['plan']);
       } else {
